@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 14px;
+            font-family: "Roboto", sans-serif;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .formGroup{
+            width: 360px;
+            position: relative;
+            margin-bottom: 25px;
+        }
+        label{
+            font-size: 16px;
+            font-weight: 600;
+            opacity: .8;
+            display: inline-block;
+        }
+        input{
+            width: 100%;
+            padding: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .06em;
+            border-radius: 5px;
+            border: 1px solid rgb(167, 167, 167);
+        }
+
+        .inputBox1 label{
+            margin-bottom: 5px;
+        }
+
+        .inputBox2 label{
+            transform: translateY(50%);
+            background: #fff;
+            padding: 0 5px;
+            margin-left: 10px;
+        }
+
+        .inputBox3 input{
+            border: none;
+            border-bottom: 1px solid rgb(167, 167, 167);
+            border-radius: 0;
+        }
+
+        .inputBox4{
+            display: flex;
+            align-items: center;
+        }
+        .inputBox4 label{
+            margin-right: 10px;
+        }
+
+        input:focus-visible{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="formGroup inputBox1">
+            <label for="">Label</label>
+            <input type="text" placeholder="Placeholder">
+        </div>
+        <div class="formGroup inputBox2">
+            <label for="">Label</label>
+            <input type="text" placeholder="Placeholder">
+        </div>
+        <div class="formGroup inputBox3">
+            <label for="">Label</label>
+            <input type="text" placeholder="Placeholder">
+        </div>
+        <div class="formGroup inputBox4">
+            <label for="">Label</label>
+            <input type="text" placeholder="Placeholder">
+        </div>
+    </form>
+</body>
+</html>
