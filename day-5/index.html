@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 14px;
+            font-family: "Roboto", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #cbdbff;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .dFlex{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 600px;
+            height: 450px;
+        }
+        .leftSide,.rightSide{
+            width: 50%;
+            position: relative;
+            height: 100%;
+        }
+        .imgArea{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .imgArea img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .rightSide{
+            text-align: center;
+            padding: 25px 0 25px 20px;
+        }
+        h4{
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        label,input{
+            display: block;
+        }
+        label{
+            text-align: left;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        input{
+            width: 100%;
+            height: 40px;
+            padding: 0 10px;
+            border: 1px solid rgb(165, 165, 165);
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .06em;
+        }
+        input:focus-visible{
+            outline: none;
+        }
+        .fromGroup{
+            margin-bottom: 25px;
+        }
+
+        button{
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;            
+            border: none;
+            font-size: 16px;
+            letter-spacing: .08em;
+            font-weight: 600;
+            transition: .2s ease-in-out;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        button.primary{
+            background: #0977d1;
+            color: #ffffffb7;
+        }
+        button.primary:hover{
+            background: #085ca1;
+            color: #fff;
+        }
+
+        button.secondary{
+            border: 1px solid rgb(172, 172, 172);
+            color: #4e4e4e;
+        }
+
+        button.secondary:hover{
+            background: rgb(172, 172, 172);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="dFlex">
+        <div class="leftSide">
+            <div class="imgArea">
+                <img src="img.png" alt="">
+            </div>
+        </div>
+        <div class="rightSide">
+            <h4>Sign In</h4>
+            <form action="">
+                <div class="fromGroup">
+                    <label for="">Email</label>
+                    <input type="email" placeholder="Enter Email">
+                </div>
+                <div class="fromGroup">
+                    <label for="">Password</label>
+                    <input type="password" placeholder="Enter Password">
+                </div>
+                <button class="primary">Sign in</button>
+                <button class="secondary">Create an account</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
