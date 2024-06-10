@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 14px;
+            font-family: "Open Sans", sans-serif;
+            background: #e9d7fe;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .dFlex{
+            display: flex;
+            align-items: center;
+        }
+        .card{
+            position: relative;
+            background: #fff;
+            width: 320px;
+            height: auto;
+            margin: 25px;
+            border-radius: 15px;
+            padding: 5px;
+        }
+        .cardHead{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 15px;
+        }
+        .cardHead .dFlex{
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+        .cardHead h6{
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .cardHead button{
+            border: none;
+            font-size: 24px;
+            opacity: .8;
+        }
+        .cardBody{
+            width: 100%;
+            height: 210px;
+            background: #f9f6fe;
+            display: flex;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .cardBody h4{
+            font-size: 28px;
+            font-weight: 600;
+            padding: 15px;
+            max-width: 70%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .cardFooter{
+            position: relative;
+            padding: 10px 25px;
+        }
+        .cardFooter .jcsb{
+            justify-content: space-between;
+        }
+        .cardFooter img{
+            width: 35px;
+            margin-right: 10px;
+        }
+
+        .cardFooter h6{
+            font-size: 12px;
+            opacity: .8;
+        }
+
+        .btn{
+            padding: 5px 12px;
+            border-radius: 50px;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 14px;
+            letter-spacing: .08em;
+            cursor: pointer;
+            transition: .2s ease-in-out;
+        }
+        .btn:hover{
+            transform: scale(1.1);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="dFlex">
+
+        <div class="card">
+            <div class="cardHead">
+                <div class="dFlex">
+                    <h6>Rs 10,000/hr</h6>
+                    <button><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="cardBody">
+                <h4>Senior PHP Developer</h4>
+            </div>
+            <div class="cardFooter">
+                <div class="dFlex jcsb">
+                    <div class="leftSide">
+                        <div class="dFlex">
+                            <img src="google.png" alt="">
+                            <h6>Senior PHP <br/> Developer</h6>
+                        </div>
+                    </div>
+                    <div class="rightSide">
+                        <button class="btn">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
