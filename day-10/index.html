@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgb(241, 241, 241);
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .dFlex{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            background: #fff;
+
+            width: 90%;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 900px;
+        }
+        .imgArea{
+            width: 40%;
+            max-width: 420px;
+            height: 320px;
+            margin-right: 40px;
+        }
+        .imgArea img{
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .textArea{
+            position: relative;
+        }
+        .textArea h4{
+            font-size: 26px;
+            margin-bottom: 5px;
+            letter-spacing: .05em;
+            font-weight: 600;
+        }
+        .textArea p{
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            opacity: .7;
+        }
+        .textArea .helpArea{
+            padding-top: 10px;
+        }
+        .textArea .helpArea h6{
+            font-size: 12px;
+            font-weight: 500;
+            opacity: .8;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            margin-bottom: 15px;
+        }
+        li{
+            display: inline-block;
+            background: rgb(226, 226, 226);
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            margin: 5px 2px 5px 0;
+        }
+        .footer{
+            border-top: 1px solid rgb(209, 209, 209);
+            padding-top: 15px;
+            display: flex;
+        }
+        button{
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            color: #555555;
+            border-radius: 5px;
+            border: 1px solid #555555;
+        }
+        .sec{
+            margin-right: 10px;
+        }
+        .primary{
+            width: 100%;
+            background: #08794a;
+            color: #fff;
+            border: 1px solid #08794a;
+        }
+    </style>
+</head>
+<body>
+    <div class="dFlex">
+        <div class="imgArea">
+            <img src="img.png" alt="">
+        </div>
+        <div class="textArea">
+            <h4>Nayan Thara</h4>
+            <p>Senior Ux Designer</p>
+            <div class="helpArea">
+                <h6>Helping With</h6>
+                <ul>
+                    <li>Ux/Ui Design</li>
+                    <li>Ui Design</li>
+                    <li>Branding</li>
+                </ul>
+            </div>
+            <div class="footer">
+                <button class="sec">About</button>
+                <button class="primary">Book Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
