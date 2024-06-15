@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 11</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css ">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .alertBox{
+            border: 1px solid black;
+            margin-bottom: 10px;
+            padding: 16px;
+            border-radius: 5px;
+        }
+        .alertBox i{
+            position: absolute;
+            font-size: 14px;
+        }
+        .alertBox h4{
+            padding-left: 1.7em;
+            margin-bottom: 5px;
+            font-size: 16px;
+            letter-spacing: .02em;
+        }
+        .alertBox p{
+            padding-left: 1.75em;
+            font-size: 14px;
+        }
+
+        .success{
+            border-color: #0c6921;
+        }
+        .success i, .success h4, .success p{
+            color: #0c6921;
+        }
+
+        .error{
+            border-color: #dc2626;
+        }
+        .error i, .error h4, .error p{
+            color: #dc2626;
+        }
+
+        .warning{
+            border-color: #856404;
+        }
+        .warning i, .warning h4, .warning p{
+            color: #856404;
+        }
+
+        .info{
+            border-color: #004085;
+        }
+        .info i, .info h4, .info p{
+            color: #004085;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="alertGroup">
+
+        <div class="alertBox success">
+            <i class="fa-solid fa-check"></i>
+            <h4>Success</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="alertBox error">
+            <i class="fa-solid fa-bug"></i>
+            <h4>Error</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="alertBox warning">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h4>Warning</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="alertBox info">
+            <i class="fa-solid fa-info"></i>
+            <h4>Info</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+    </div>
+</body>
+</html>
