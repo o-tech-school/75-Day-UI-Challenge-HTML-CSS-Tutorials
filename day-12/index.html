@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .loader{
+            width: 250px;
+            height: 15px;
+            background: #e6e6e6;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .loader::before{
+            content: '';
+            display: block;
+            width: 120px;
+            height: 100%;
+            top: 0;
+            background: #1cae30;
+            animation: move 3s linear infinite;
+            position: absolute;
+        }
+
+        @keyframes move{
+            from{
+                left: -120px;
+            }
+            to{
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>
