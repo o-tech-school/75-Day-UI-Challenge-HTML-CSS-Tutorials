@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 14px;
+            font-family: "Poppins", sans-serif;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .modal{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;   
+            
+            opacity: 0;
+            visibility: hidden;
+        }
+        .modal.show{
+            opacity: 1;
+            visibility: visible;
+        }
+        .bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.137);
+        }
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            width: max-content;
+        }
+        .close{
+            display: flex;
+            justify-content: end;
+        }
+        .close button{
+            border: none;
+            font-size: 16px;
+        }
+        .mainContent{
+            padding: 25px 15px 10px 0;
+        }
+        h2{
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        p{
+            margin-bottom: 25px;
+        }
+        .footer{
+            display: flex;
+            justify-content: end;
+        }
+        .footer button{
+            font-size: 15px;
+            padding: 5px 18px;
+            letter-spacing: .08em;
+            border-radius: 3px;
+        }
+        .secondary{
+            border: 1px solid rgb(214, 214, 214);
+            background: white;
+            margin-right: 15px;
+        }
+        .primary{
+            border: 1px solid rgb(221, 57, 57);
+            background: rgb(221, 57, 57);
+            color: #fff;
+        }
+
+        #openModelBtn{
+            font-size: 15px;
+            padding: 5px 18px;
+            letter-spacing: .08em;
+            border-radius: 3px;
+            border: 1px solid rgb(214, 214, 214);
+            background: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="openModelBtn">Open Model</button>
+    <div id="modal" class="modal">
+        <div onclick="closeModal()" class="bg"></div>
+        <div class="content">
+            <div class="close"><button onclick="closeModal()">X</button></div>
+            <div class="mainContent">
+                <h2>Are you sure delete this file ?</h2>
+                <p>If you delete the file you can't recover it.</p>
+                <div class="footer">
+                    <button onclick="closeModal()" class="secondary">Cancel</button>
+                    <button class="primary">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let button = document.getElementById('openModelBtn');
+        let modal = document.getElementById('modal');
+
+        button.addEventListener('click', function(){
+            modal.classList.add('show');
+        })
+
+        function closeModal(){
+            modal.classList.remove('show');
+        }
+    </script>
+</body>
+</html>
