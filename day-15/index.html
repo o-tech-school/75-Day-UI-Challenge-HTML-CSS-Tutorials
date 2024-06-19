@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+            background: #ededed;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        a,a:hover,a:active{
+            text-decoration: none;
+            color: inherit;
+        }
+        .customDropDown{
+            position: relative;
+        }
+        button{
+            padding: 5px 15px;
+            border: 1px solid #000;
+            background: #000;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .customDropDown .content{
+            position: absolute;
+            background: #ffffff;
+            padding: 5px;
+            /* margin-top: 10px; */
+            border-radius: 5px;
+            
+            transform: translateY(15px);
+            opacity: 0;
+            visibility: hidden;
+        }
+        .customDropDown .content::before{
+            content: '';
+            position: absolute;
+            border: 5px solid transparent;
+            border-top-width: 0;
+            border-bottom-color: #fff;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .customDropDown .content li{
+            display: block;
+            width: max-content;
+            padding: 3px 10px;
+        }
+        .customDropDown .content li a{
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        .customDropDown .content li:hover{
+            background: #ededed;
+            width: 100%;
+            border-radius: 1px;
+        }
+
+        .customDropDown:hover .content{
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="customDropDown">
+        <button>Hover Me</button>
+        <ul class="content">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+</body>
+</html>
