@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        button{
+            padding: 5px 15px;
+            margin-right: 15px;
+        }
+        button:last-child{
+            margin-right: 0;
+        }
+        [tooltip]{
+            position: relative;
+            cursor: pointer;
+        }
+
+        [tooltip]::before, [tooltip]::after{
+            position: absolute;
+
+            opacity: 0;
+            visibility: hidden;
+            
+        }
+
+        [tooltip]::before{
+            content: attr(tooltip);
+            background: #000;
+            color: #fff;
+            width: max-content;
+            max-width: 120px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            letter-spacing: .05em;            
+        }
+        [tooltip]::after{
+            content: '';            
+           
+        }
+
+        /* Flow Up   */
+
+        [flow^="up"]::before,[flow^="up"]::after{
+            left: 50%;
+            transform: translate(-50%, -.5em);
+        }
+
+        [flow^="up"]::before{
+            bottom: calc(100% + 5px);
+        }
+
+        [flow^="up"]::after{
+            bottom: 100%;
+            border: 5px solid transparent;
+            border-bottom-width: 0;
+            border-top-color: #000;
+        }
+
+        /* Flow Down   */
+
+        [flow^="down"]::before,[flow^="down"]::after{
+            left: 50%;
+            transform: translate(-50%, .5em);
+        }
+
+        [flow^="down"]::before{
+            top: calc(100% + 5px);
+        }
+
+        [flow^="down"]::after{
+            top: 100%;
+            border: 5px solid transparent;
+            border-top-width: 0;
+            border-bottom-color: #000;
+        }
+
+        /* Flow Left   */
+
+        [flow^="left"]::before,[flow^="left"]::after{
+            left: 50%;
+            transform: translate(-50%, .5em);
+        }
+
+        [flow^="left"]::before{
+            left: auto;
+            top: 50%;
+            right: calc(100% + 5px);
+            transform: translate(-.5em, -50%);
+        }
+
+        [flow^="left"]::after{
+            top: 50%;
+            border: 5px solid transparent;
+            border-right-width: 0;
+            border-left-color: #000;
+            transform: translate(-.5em, -50%);
+            left: calc(0em - 5px);
+        }
+
+        /* Flow Right   */
+
+        [flow^="right"]::before,[flow^="right"]::after{
+            left: 50%;
+            transform: translate(-50%, .5em);
+        }
+
+        [flow^="right"]::before{
+            left: auto;
+            top: 50%;
+            left: calc(100% + 5px);
+            transform: translate(.5em, -50%);
+        }
+
+        [flow^="right"]::after{
+            top: 50%;
+            border: 5px solid transparent;
+            border-left-width: 0;
+            border-right-color: #000;
+            transform: translate(.5em, -50%);
+            right: calc(0em - 5px);
+        }
+
+
+        [tooltip]:hover::after, [tooltip]:hover::before{
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <button tooltip="I am Up" flow="up">Up</button>
+        <button tooltip="I am Down" flow="down">Down</button>
+        <button tooltip="I am Left" flow="left">Left</button>
+        <button tooltip="I am Right" flow="right">Right</button>
+    </div>
+</body>
+</html>
