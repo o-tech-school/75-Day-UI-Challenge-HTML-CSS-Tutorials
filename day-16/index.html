@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 16</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #ededed;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .tabWrapper{
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid #e0e0e0;
+        }
+        .tabNav{
+            display: flex;
+        }
+        .tabNav button{
+            border: none;
+            background: #456bed;
+            padding: 10px 20px;
+            color: #e5ecf2;
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .tabNav button:first-child{
+            border-radius: 5px 0 0 5px;
+        }
+        .tabNav button:last-child{
+            border-radius: 0 5px 5px 0;
+        }
+        .tabNav button.active{
+            background: #fff;
+            color: #456bed;
+        }
+        .tabContent{
+            padding: 5px;
+        }
+        .tabContent .tabTarget{
+            display: none;
+        }
+        .tabContent .tabTarget.active{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tabWrapper">
+        <nav class="tabNav">
+            <button class="active" data-target="homeTab">Home</button>
+            <button data-target="aboutTab">About</button>
+            <button data-target="serviceTab">Service</button>
+            <button data-target="contactTab">Contact</button>
+        </nav>
+        <div class="tabContent">
+
+            <div class="tabTarget active" id="homeTab">
+                <h2>Home</h2>
+            </div>
+
+            <div class="tabTarget" id="aboutTab">
+                <h2>About</h2>
+            </div>
+
+            <div class="tabTarget" id="serviceTab">
+                <h2>Service</h2>
+            </div>
+
+            <div class="tabTarget" id="contactTab">
+                <h2>Contact</h2>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let navBtns = document.querySelectorAll('.tabNav button');
+        let targets = document.querySelectorAll('.tabTarget');
+
+        navBtns.forEach(function(navBtn){
+            navBtn.addEventListener('click', function(e){
+                navBtns.forEach(function(btn){
+                    btn.classList.remove('active');
+                });
+                
+                e.target.classList.add('active');
+                
+                let targetId = this.dataset.target;
+                
+                targets.forEach(function(target){
+                    target.classList.remove('active');
+                });
+
+                document.getElementById(targetId).classList.add('active');
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>
