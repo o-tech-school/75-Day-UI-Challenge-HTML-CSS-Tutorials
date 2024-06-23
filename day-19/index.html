@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 19</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .starRating{
+            font-size: 2em;
+            cursor: pointer;
+            direction: rtl;
+        }
+        .starRating span{
+            color: #ccc;
+        }
+        .starRating span.selected, 
+        .starRating span:hover, 
+        .starRating span:hover~span{
+            color: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="starRating">
+        <span data-value="5">&#9733;</span>
+        <span data-value="4">&#9733;</span>
+        <span data-value="3">&#9733;</span>
+        <span data-value="2">&#9733;</span>
+        <span data-value="1">&#9733;</span>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.starRating span');
+        let selectRating = 0;
+        stars.forEach(star => {
+            star.addEventListener('click', function(){
+                selectRating = this.getAttribute('data-value');
+
+                stars.forEach(star => {
+                    star.classList.remove('selected');
+                    if(star.getAttribute('data-value') <= selectRating){
+                        star.classList.add('selected');
+                    }
+                })
+            })
+        })
+        
+    </script>
+</body>
+
+</html>
