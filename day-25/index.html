@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 25</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #1e1e1e;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .testimonials{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+        }
+        .content{
+            background: #2b2b2b;
+            padding: 20px;
+            width: 300px;
+            color: #fff;
+            border-radius: 15px;
+            box-shadow: 7px 7px 14px #141414, -7px -7px 14px #383838;
+            position: relative;
+            margin-bottom: 25px;
+            transition: .2s ease-in-out;
+            margin-right: 25px;
+        }
+        .content:last-child{
+            margin-right: 0;
+        }
+        .content::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,.2);
+        }
+        .content p{
+            font-size: 1.1em;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .testimonialAuth{
+            display: flex;
+            align-items: center;
+        }
+        .testimonialAuth img{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #444;
+            margin-right: 15px;
+            transition: .2s ease-in-out;
+        }
+        .testimonialAuth h3{
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .testimonialAuth p{
+            margin: 0;
+            font-size: .9em;
+            color: #aaa;
+        }
+
+        .content:hover{
+            transform: translateY(-10px);
+            box-shadow: 7px 7px 14px #1c1c1c, -7px -7px 14px #404040;
+        }
+        .content:hover::before{
+            opacity: 0;
+        }
+        .content:hover .testimonialAuth img{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="testimonials">
+        <div class="content">
+            <p>"This product changed my life! Highly recommended."</p>
+            <div class="testimonialAuth">
+                <img src="img/01.jpg" alt="">
+                <div class="authInfo">
+                    <h3>Auth 1</h3>
+                    <p>CEO, Company</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <p>"Excellent service and support. Five stars!"</p>
+            <div class="testimonialAuth">
+                <img src="img/02.webp" alt="">
+                <div class="authInfo">
+                    <h3>Auth 2</h3>
+                    <p>CTO, Company</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <p>"I couldn't be happier with the results. Outstanding!"</p>
+            <div class="testimonialAuth">
+                <img src="img/03.jpg" alt="">
+                <div class="authInfo">
+                    <h3>Auth 3</h3>
+                    <p>CMO, Company</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
