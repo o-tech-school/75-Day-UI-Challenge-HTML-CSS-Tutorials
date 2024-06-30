@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 26</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f9f9f9;
+        }
+        .faqSection{
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,.1);
+            overflow: hidden;
+        }
+        .faqSection h1{
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        .faqItem{
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .faqItem button{
+            width: 100%;
+            background: #f1f1f1;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faqItem button::after{
+            content: '\002B';
+            font-size: 1.5em;
+        }
+
+        .faqItem button:hover{
+            background: #e2e2e2;
+            transform: translateY(-2px);
+        }
+
+        .faqItem button.open::after{
+            content: '\2212';
+        }
+
+        .faqAns{
+            padding: 15px;
+            font-size: 16px;
+            background: #fafafa;
+            border-radius: 4px;
+            margin-top: 8px;
+            animation: fadeIn .5s ease-in-out;
+            display: none;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="faqSection">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faqItem">
+            <button>What is your return policy?</button>
+            <div class="faqAns">
+                <p>Our return policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately, we can’t
+                    offer you a refund or exchange.</p>
+            </div>
+        </div>
+        <div class="faqItem">
+            <button>How do I track my order?</button>
+            <div class="faqAns">
+                <p>You can track your order status in the "My Orders" section of your account page.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faqItem');
+
+        faqItems.forEach(item => {
+            const button = item.querySelector('button');
+            const faqAns = item.querySelector('.faqAns');
+
+            button.addEventListener('click', ()=>{
+                faqItems.forEach(i => {
+                    i.querySelector('button').classList.remove('open');
+                    i.querySelector('.faqAns').style.display = 'none';
+                })
+                button.classList.add('open');
+                faqAns.style.display = 'block';
+            })
+        })
+    </script>
+
+</body>
+
+</html>
