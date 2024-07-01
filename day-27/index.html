@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 27</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            background: #f9f9f9;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .posts{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin: 50px 0;
+        }
+        .post{
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+            transition: .2s ease-in-out;
+        }
+        .post img{
+            height: 250px;
+            object-fit: cover;
+        }
+        .post h2{
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .post .date{
+            color: #777;
+            font-size: .9em;
+            margin-bottom: 15px;
+        }
+        .post .desc{
+            margin-bottom: 15px;
+        }
+        .post a{
+            color: #333;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #333;
+            transition: .2s ease-in-out;
+            display: inline-block;
+        }
+        .post a:hover{
+            background: #333;
+            color: #fff;
+        }
+
+        .post:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0,0,0,.2);
+        }
+
+        @media (max-width: 900px){
+            .posts{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px){
+            .posts{
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="posts">
+        <article class="post">
+            <img src="img/01.jpg" alt="">
+            <h2>10 Healthy Foods to Add to Your Diet</h2>
+            <p class="date">June 30, 2024</p>
+            <p class="desc">Discover the top 10 healthy foods that can improve your diet and overall well-being. From
+                avocados to berries, learn why these foods should be on your grocery list.</p>
+            <a href="">Read More</a>
+        </article>
+        <article class="post">
+            <img src="img/02.jpg" alt="">
+            <h2>Benefits of Morning Yoga</h2>
+            <p class="date">June 30, 2024</p>
+            <p class="desc">Morning yoga can transform your day. Explore the benefits of starting your day with yoga,
+                including increased flexibility, better focus, and reduced stress.</p>
+            <a href="">Read More</a>
+        </article>
+        <article class="post">
+            <img src="img/03.jpg" alt="">
+            <h2>Top 5 Travel Destinations for 2024</h2>
+            <p class="date">June 30, 2024</p>
+            <p class="desc">Looking for travel inspiration? Check out our list of the top 5 travel destinations for
+                2024, featuring beautiful landscapes, vibrant cultures, and exciting activities.</p>
+            <a href="">Read More</a>
+        </article>
+        <article class="post">
+            <img src="img/04.jpg" alt="">
+            <h2>Emerging Technology Trends in 2024</h2>
+            <p class="date">June 30, 2024</p>
+            <p class="desc">Stay ahead of the curve with our guide to the emerging technology trends of 2024. From AI
+                advancements to sustainable tech, learn what's shaping the future.</p>
+            <a href="">Read More</a>
+        </article>
+        <article class="post">
+            <img src="img/05.jpg" alt="">
+            <h2>Home Decor Ideas for a Cozy Living Space</h2>
+            <p class="date">June 30, 2024</p>
+            <p class="desc">Create a warm and inviting home with our top home decor ideas. Discover tips on choosing the
+                right colors, furniture, and accessories to make your living space cozy and stylish.</p>
+            <a href="">Read More</a>
+        </article>
+        <article class="post">
+            <img src="img/06.jpg" alt="">
+            <h2>Personal Finance Tips for Young Adults</h2>
+            <p class="date">June 30, 2024</p>
+            <p class="desc">Managing finances can be challenging for young adults. Our personal finance tips will help
+                you budget, save, and invest wisely for a secure financial future.</p>
+            <a href="">Read More</a>
+        </article>
+    </div>
+</body>
+
+</html>
