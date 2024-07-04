@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 29</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #121212;
+            color: #fff;
+        }
+        a,a:hover,a:active{
+            text-decoration: none;
+            color: inherit;
+        }
+        .conatainer{
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        nav{
+            background: #1e1e1e;
+            box-shadow: 0 2px 4px rgba(0,0,0,.5);
+            padding: 10px 20px;
+        }
+        nav.sticky{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            animation: fade .2s ease-in-out;
+        }
+        @keyframes fade{
+            from{
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .dFlex{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: inline-block;
+        }
+        .navLink a{
+            margin-right: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            opacity: .8;
+        }
+        .navLink a.active{
+            opacity: 1;
+        }
+        .navLink li:last-child a{
+            margin-right: 0;
+        }
+        .findAgent{
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+        .getQuote{
+            padding: 5px 15px;
+            background: #fff;
+            color: #121212;
+            font-weight: 600;
+            letter-spacing: .05em;
+            border-radius: 50px;
+            transition: .2s ease-in-out;
+        }
+        .getQuote:hover{
+            background: #000;
+            color: #fff;
+        }
+
+        main{
+            background: #1e1e1e;
+            height: 150vh;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="conatainer">
+            <div class="dFlex">
+                <a href=""><h1>Logo</h1></a>
+                <ul class="navLink">
+                    <li><a class="active" href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Service</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+                <div class="navAction">
+                    <a href="" class="findAgent">Find an agent</a>
+                    <a href="" class="getQuote">Get a quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main></main>
+
+    <script>
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', ()=>{
+            if(window.scrollY > 50){
+                nav.classList.add('sticky');
+            }else{
+                nav.classList.remove('sticky');
+            }
+        })
+    </script>
+</body>
+
+</html>
