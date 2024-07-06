@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 31</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .productList{
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 15px 50px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .productCard{
+            width: 100%;
+            position: relative;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .proImg{
+            position: relative;
+            height: 450px;
+            width: 100%;
+        }
+        .proImg img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            transition: .2s ease-in-out;
+        }
+        .proImg .img1{
+            opacity: 1;
+        }
+        .proImg .img2{
+            opacity: 0;
+        }
+
+        .proInfo{
+            position: relative;
+        }
+        .proInfo .textArea{
+            position: relative;
+            overflow: hidden;
+            padding: 8px 0;
+        }
+        h2{
+            font-size: 18px;
+            font-weight: 700;
+            margin: 8px 0;
+        }
+        p{
+            font-size: 14px;
+            color: #757575;
+            margin: 8px 0;
+        }
+        button{
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #000;
+            font-weight: 700;
+            letter-spacing: .05em;
+            margin: 8px 0 0;
+        }
+        .proInfo .textArea .onHover{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: .2s ease-in-out;
+        }
+        .priceArea{
+            border-top: 1px solid #e0e0e0;
+            padding: 10px 0;
+        }
+        .priceArea .newPrice{
+            font-size: 18px ;
+            font-weight: 700;
+            color: #e53935;
+            margin-right: 8px;
+        }
+        .priceArea .oldPrice{
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #1e1e1e;
+            margin-right: 5px;
+        }
+        .priceArea .discount{
+            font-size: 14px;
+            color: #0fa115;
+            font-weight: 600;
+        }
+
+        .withOutHover{
+            transition: .2s ease-in-out;
+        }
+        .productCard:hover .proImg .img1{
+            opacity: 0;
+        }
+        .productCard:hover .proImg .img2{
+            opacity: 1;
+        }
+        .productCard:hover .withOutHover{
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        .productCard:hover .onHover{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        @media (min-width:996px){
+            .productCard{
+                width: calc(100% / 2 - 10px);
+            }
+        }
+
+        @media (min-width:1280px){
+            .productCard{
+                width: calc(100% / 3 - 15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="productList">
+
+        <div class="productCard">
+            <div class="proImg">
+                <img src="img/01.webp" alt="" class="img1">
+                <img src="img/01-hover.webp" alt="" class="img2">
+            </div>
+            <div class="proInfo">
+                <div class="textArea">
+                    <div class="withOutHover">
+                        <h2>Louis Philippe</h2>
+                        <p>Pure Cotton Printed T-shirt</p>
+                    </div>
+                    <div class="onHover">
+                        <button>Wishlist</button>
+                        <p>Size: S, M</p>
+                    </div>
+                </div>
+                <div class="priceArea">
+                    <span class="newPrice">Rs. 629</span>
+                    <span class="oldPrice">Rs. 699</span>
+                    <span class="discount">(10% Off)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="productCard">
+            <div class="proImg">
+                <img src="img/02.webp" alt="" class="img1">
+                <img src="img/02-hover.webp" alt="" class="img2">
+            </div>
+            <div class="proInfo">
+                <div class="textArea">
+                    <div class="withOutHover">
+                        <h2>Difference of Opinion</h2>
+                        <p>Typography Oversized T-shirt</p>
+                    </div>
+                    <div class="onHover">
+                        <button>Wishlist</button>
+                        <p>Size: S</p>
+                    </div>
+                </div>
+                <div class="priceArea">
+                    <span class="newPrice">Rs. 629</span>
+                    <span class="oldPrice">Rs. 699</span>
+                    <span class="discount">(10% Off)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="productCard">
+            <div class="proImg">
+                <img src="img/03.webp" alt="" class="img1">
+                <img src="img/03-hover.webp" alt="" class="img2">
+            </div>
+            <div class="proInfo">
+                <div class="textArea">
+                    <div class="withOutHover">
+                        <h2>Roadster</h2>
+                        <p>Polo Collar Cotton Pure Cotton T-shirt</p>
+                    </div>
+                    <div class="onHover">
+                        <button>Wishlist</button>
+                        <p>Size: S, M</p>
+                    </div>
+                </div>
+                <div class="priceArea">
+                    <span class="newPrice">Rs. 629</span>
+                    <span class="oldPrice">Rs. 699</span>
+                    <span class="discount">(10% Off)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="productCard">
+            <div class="proImg">
+                <img src="img/04.webp" alt="" class="img1">
+                <img src="img/04-hover.webp" alt="" class="img2">
+            </div>
+            <div class="proInfo">
+                <div class="textArea">
+                    <div class="withOutHover">
+                        <h2>Aero Armour</h2>
+                        <p>Unisex Pure Cotton T-shirt</p>
+                    </div>
+                    <div class="onHover">
+                        <button>Wishlist</button>
+                        <p>Size: S, M</p>
+                    </div>
+                </div>
+                <div class="priceArea">
+                    <span class="newPrice">Rs. 629</span>
+                    <span class="oldPrice">Rs. 699</span>
+                    <span class="discount">(10% Off)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="productCard">
+            <div class="proImg">
+                <img src="img/05.webp" alt="" class="img1">
+                <img src="img/05-hover.webp" alt="" class="img2">
+            </div>
+            <div class="proInfo">
+                <div class="textArea">
+                    <div class="withOutHover">
+                        <h2>Kook N Keech</h2>
+                        <p>Striped Polo Collar T-shirt</p>
+                    </div>
+                    <div class="onHover">
+                        <button>Wishlist</button>
+                        <p>Size: S, M</p>
+                    </div>
+                </div>
+                <div class="priceArea">
+                    <span class="newPrice">Rs. 629</span>
+                    <span class="oldPrice">Rs. 699</span>
+                    <span class="discount">(10% Off)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="productCard">
+            <div class="proImg">
+                <img src="img/06.webp" alt="" class="img1">
+                <img src="img/06-hover.webp" alt="" class="img2">
+            </div>
+            <div class="proInfo">
+                <div class="textArea">
+                    <div class="withOutHover">
+                        <h2>U.S. Polo Assn. Denim Co.</h2>
+                        <p>Printed Cotton T-Shirt</p>
+                    </div>
+                    <div class="onHover">
+                        <button>Wishlist</button>
+                        <p>Size: S, M</p>
+                    </div>
+                </div>
+                <div class="priceArea">
+                    <span class="newPrice">Rs. 629</span>
+                    <span class="oldPrice">Rs. 699</span>
+                    <span class="discount">(10% Off)</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
