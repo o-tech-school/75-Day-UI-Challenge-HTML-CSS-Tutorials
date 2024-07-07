@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 32</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+        }
+
+        .proContent {
+            margin: 35px 15px;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+        .proContent .leftSide{
+            width: 265px;
+        }
+        .filterItem{
+            position: relative;
+            padding: 20px 10px 15px 15px;
+            border-bottom: 1px solid #e9e9ed;
+            border-right: 1px solid #edebef;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: block;
+            margin-bottom: 8px;
+        }
+        h4{
+            font-weight: 700;
+            font-size: 14px;
+            margin: 0 0 18px;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+        .brnone{
+            border-right: none;
+        }
+        .customCheckBox{
+            display: block;
+            width: 95%;
+            cursor: pointer;
+            min-height: 17px;
+            color: #282c3f;
+            position: relative;
+        }
+        .customCheckBox input{
+            opacity: 0;
+            visibility: hidden;
+            margin: 0 8px 0;
+        }
+        .customCheckBox .checkIndicator{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #c3c2c9;
+            background: #fff;
+            border-radius: 2px;
+        }
+        .customCheckBox .num{
+            color: #94969f;
+            font-size: 11px;
+            margin-left: 5px;
+        }
+        .customCheckBox .color{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            transform: translate(24px,1px);
+            border: 1px solid #ededed;
+        }
+        .customCheckBox .color.black{
+            background: #36454f;
+        }
+        .customCheckBox .color.blue{
+            background: #0074d9;
+        }
+        .customCheckBox .color.white{
+            background: #fff;
+        }
+        .customCheckBox .color.yellow{
+            background: #eadc32;
+        }
+        .customCheckBox .color.maroon{
+            background: #b03060;
+        }
+        .customCheckBox .color.red{
+            background: #d34b56;
+        }
+        .checkIndicator.round{
+            border-radius: 50%;
+        }
+        .customCheckBox input:checked ~ .checkIndicator{
+            border: none;
+            background: #ff3f6c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="proContent">
+        <div class="leftSide">
+            <div class="filterCon">
+                <div class="filterItem brnone">
+                    <h4>Filter</h4>
+                </div>
+                <div class="filterItem">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li>
+                            <label for="Tshirts" class="customCheckBox">
+                                <input id="Tshirts" type="checkbox"> Tshirts
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="loungeTshirts" class="customCheckBox">
+                                <input id="loungeTshirts" type="checkbox"> Lounge Tshirts
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filterItem">
+                    <h4>Brand</h4>
+                    <ul>
+                        <li>
+                            <label for="roadster" class="customCheckBox">
+                                <input id="roadster" type="checkbox"> Roadster
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="friskers" class="customCheckBox">
+                                <input id="friskers" type="checkbox"> Friskers
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="uspolo" class="customCheckBox">
+                                <input id="uspolo" type="checkbox"> U.S. Polo
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="hrx" class="customCheckBox">
+                                <input id="hrx" type="checkbox"> HRX
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="wrogn" class="customCheckBox">
+                                <input id="wrogn" type="checkbox"> Wrogn
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filterItem">
+                    <h4>Price</h4>
+                    <ul>
+                        <li>
+                            <label for="rs124" class="customCheckBox">
+                                <input id="rs124" type="checkbox"> Rs 124 to Rs 13843
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="rs13843" class="customCheckBox">
+                                <input id="rs13843" type="checkbox"> Rs 13843 To Rs 27562
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="rs27562" class="customCheckBox">
+                                <input id="rs27562" type="checkbox"> Rs 27562 To Rs 41281
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="rs41281" class="customCheckBox">
+                                <input id="rs41281" type="checkbox"> Rs 41281 To Rs 55000
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filterItem">
+                    <h4>Color</h4>
+                    <ul>
+                        <li>
+                            <label for="black" class="customCheckBox">
+                                <span class="color black"></span>
+                                <input id="black" type="checkbox"> Black
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="blue" class="customCheckBox">
+                                <span class="color blue"></span>
+                                <input id="blue" type="checkbox"> Blue
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="white" class="customCheckBox">
+                                <span class="color white"></span>
+                                <input id="white" type="checkbox"> White
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="yellow" class="customCheckBox">
+                                <span class="color yellow"></span>
+                                <input id="yellow" type="checkbox"> Yellow
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="maroon" class="customCheckBox">
+                                <span class="color maroon"></span>
+                                <input id="maroon" type="checkbox"> Maroon
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="red" class="customCheckBox">
+                                <span class="color red"></span>
+                                <input id="red" type="checkbox"> Red
+                                <span class="num">(1234)</span>
+                                <span class="checkIndicator"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filterItem">
+                    <h4>Discount Range</h4>
+                    <ul>
+                        <li>
+                            <label for="first" class="customCheckBox">
+                                <input id="first" type="checkbox"> 10% and above
+                                <span class="checkIndicator round"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="second" class="customCheckBox">
+                                <input id="second" type="checkbox"> 20% and above
+                                <span class="checkIndicator round"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="third" class="customCheckBox">
+                                <input id="third" type="checkbox"> 30% and above
+                                <span class="checkIndicator round"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="fourth" class="customCheckBox">
+                                <input id="fourth" type="checkbox"> 40% and above
+                                <span class="checkIndicator round"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="fifth" class="customCheckBox">
+                                <input id="fifth" type="checkbox"> 10% and above
+                                <span class="checkIndicator round"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="sixth" class="customCheckBox">
+                                <input id="sixth" type="checkbox"> 50% and above
+                                <span class="checkIndicator round"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="rightSide">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
