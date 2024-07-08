@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 33</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        h5 {
+            font-size: 14px;
+            text-transform: uppercase;
+            opacity: .6;
+            letter-spacing: .06em;
+        }
+
+        h6 {
+            font-size: 14px;
+            letter-spacing: .05em;
+        }
+
+        p {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: .7;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff3f6c;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            transition: .2s ease-in-out;
+        }
+
+        a i {
+            margin-left: 5px;
+        }
+
+        a:hover {
+            color: #df1b49;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .dFlex {
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+
+        .dFlex.aic {
+            align-items: center;
+        }
+
+        .dFlex.jcsb {
+            justify-content: space-between;
+        }
+        .success{
+            color: #03a685;
+        }
+        button {
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            border-radius: 4px;
+            transition: .2s ease-in-out;
+            cursor: pointer;
+        }
+
+        button.sec {
+            border: 1px solid #ff3f6c;
+            color: #ff3f6c;
+        }
+
+        button.sec:hover {
+            background: #ff3f6c;
+            color: #fff;
+        }
+
+        button.primary{
+            background: #ff3f6c;
+            color: #fff;
+        }
+        button.primary:hover{
+            background: #df1b49;
+        }
+
+        .customCheckBox {
+            position: relative;
+        }
+
+        .customCheckBox input {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .customCheckBox h4 {
+            margin-left: 25px;
+        }
+
+        .customCheckBox .indicator i{
+            opacity: 0;
+        }
+
+        .customCheckBox .indicator {
+            width: 16px;
+            height: 16px;
+            border: 1px solid #282c3f;
+            text-align: center;
+            line-height: 16px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .customCheckBox .indicator i {
+            font-size: 10px;
+        }
+
+        .customCheckBox input:checked~.indicator {
+            background: #ff3f6c;
+            border: 1px solid #ff3f6c;
+        }
+
+        .customCheckBox input:checked~.indicator i {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .cartLayout {
+            width: 100%;
+            max-width: 980px;
+            margin: 25px auto;
+            padding: 10px 10px 15px;
+            color: #282c3f;
+        }
+
+        .itemBlock {
+            width: 64%;
+            padding-right: 20px;
+            border-right: 1px solid #eaeaec;
+        }
+
+        .priceBlock {
+            width: 35%;
+            padding: 20px 00 15px;
+        }
+
+        .addressCon {
+            margin-bottom: 8px;
+            background: #fff6f4;
+            padding: 16px;
+            border-right: 4px;
+            border: 1px solid #e0e0ec;
+        }
+
+        .msgCon {
+            margin-bottom: 10px;
+            background: #fff;
+            padding: 16px 8px 12px;
+            border: 1px solid #eaeaec;
+            border-radius: 4px;
+        }
+
+        .msgCon .title {
+            margin-bottom: 8px;
+        }
+
+        .msgCon .title i {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #282c3f;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 25px;
+        }
+
+        .msgCon .offerItem {
+            padding: 0 0 0 15px;
+        }
+
+        .msgCon .offerItem p {
+            margin-bottom: 5px;
+        }
+
+        .bulkActCon {
+            margin-bottom: 10px;
+            padding: 10px 18px;
+        }
+
+        .bulkActCon button:first-child {
+            border-right: 1px solid #e0e0ec;
+        }
+
+        .cartItemsList {
+            margin-bottom: 10px;
+        }
+
+        .cartItemsList .item {
+            position: relative;
+            padding: 8px;
+            border: 1px solid #eaeaec;
+            border-radius: 4px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .item .imgArea {
+            width: 111px;
+            height: 148px;
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .item .imgArea img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item .customCheckBox {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        .item .textArea {
+            width: calc(100% - 125px);
+        }
+
+        .item .textArea h4 {
+            margin-bottom: 4px;
+        }
+
+        .item .textArea .soldBy {
+            padding: 6px 0 0;
+            opacity: .5;
+        }
+
+        .item .textArea .butGroup {
+            margin: 6px 0;
+        }
+
+        .item .textArea button {
+            background: #f7f7f7;
+            margin-right: 10px;
+        }
+
+        .item .priceArea {
+            margin-bottom: 6px;
+        }
+
+        .item .priceArea .newPrice {
+            font-size: 16px;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        .item .priceArea .oldPrice {
+            text-decoration: line-through;
+            font-weight: 700;
+            opacity: .8;
+            margin-right: 6px;
+        }
+
+        .item .priceArea .off {
+            color: #ff3f6c;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .item .returnArea {
+            margin-bottom: 4px;
+        }
+
+        .item strong {
+            color: #000;
+            font-weight: 900;
+        }
+
+        .item .returnArea i {
+            color: #000;
+        }
+
+        .item .deliveryArea i {
+            color: rgb(0, 112, 0);
+        }
+
+        .item .closeItem {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
+
+        .addWishlistCon {
+            background: #fff;
+            border: 1px solid #eaeaec;
+            padding: 16px 18px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .addWishlistCon i {
+            margin-right: 8px;
+        }
+
+        .priceBlock {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .couponsCon h5 {
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 12px;
+        }
+
+        .couponsCon .dFlex {
+            padding: 10px 0;
+        }
+
+        .couponsCon i {
+            margin-right: 10px;
+        }
+
+        .donationCon h5 {
+            font-size: 12px;
+            letter-spacing: .02em;
+            margin: 12px 0 18px;
+        }
+        .donationCon .donatePrice{
+            margin: 12px 0;
+        }
+        .donationCon .donatePrice li{
+            display: inline-block;
+            border: 1px solid #d4d5d9;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-weight: 700;
+        }
+        .priceCon{
+            margin: 24px 0 12px;
+        }
+        .priceCon p{
+            padding-left: 5px;
+        }
+        .priceCon li{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 3px;
+        }
+        .priceCon li.totalArea{
+            font-weight: 700;
+            border-top: 1px solid #d4d5d9;
+            padding: 8px 3px;
+        }
+        .priceCon button{
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cartLayout dFlex jcsb">
+        <div class="itemBlock">
+            <div class="addressCon">
+                <div class="dFlex jcsb aic">
+                    <div class="pinCode">
+                        <span>Deliver To: <strong>751010</strong></span>
+                    </div>
+                    <button class="sec">
+                        Change Address
+                    </button>
+                </div>
+            </div>
+            <div class="msgCon">
+                <div class="dFlex aic title">
+                    <i class="fa-solid fa-percent"></i>
+                    <h6>Available Offers</h6>
+                </div>
+                <div class="offerItem">
+                    <p>10% Instant Discount upto ₹1000 on Kotak Bank Cards on a min spend of ₹3,000. TCA</p>
+                    <a href="">Show More <i class="fa-solid fa-angle-down"></i></a>
+                </div>
+            </div>
+            <div class="bulkActCon">
+                <div class="dFlex aic jcsb">
+                    <div class="leftSide">
+                        <label class="customCheckBox" for="checkAllCartItem">
+                            <input checked type="checkbox" id="checkAllCartItem">
+                            <h4>2/2 items selected</h4>
+                            <div class="indicator">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="rightSide">
+                        <button>Remove</button>
+                        <button>Move To Wishlist</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cartItemsList">
+                <div class="item">
+                    <div class="imgArea">
+                        <img src="img/01.webp" alt="">
+                        <label class="customCheckBox" for="hereNew">
+                            <input checked type="checkbox" id="hereNew">
+                            <div class="indicator">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="textArea">
+                        <h4>Here & New</h4>
+                        <p>Men White Regular Fit Solid Sustainable Casual Shirt</p>
+                        <p class="soldBy">Sold by: Sixth Sense</p>
+                        <div class="butGroup">
+                            <button>Size: 40 <i class="fa-solid fa-caret-down"></i></button>
+                            <button>Qty: 1 <i class="fa-solid fa-caret-down"></i></button>
+                        </div>
+                        <div class="priceArea">
+                            <span class="newPrice"><i class="fa-solid fa-indian-rupee-sign"></i> 899</span>
+                            <span class="oldPrice"><i class="fa-solid fa-indian-rupee-sign"></i> 1,899</span>
+                            <span class="off"><i class="fa-solid fa-indian-rupee-sign"></i> 1,000 Off</span>
+                        </div>
+                        <div class="returnArea">
+                            <p>
+                                <i class="fa-solid fa-rotate-left"></i>
+                                <strong>14 days</strong>
+                                <span>return available</span>
+                            </p>
+                        </div>
+                        <div class="deliveryArea">
+                            <p>
+                                <i class="fa-solid fa-check"></i>
+                                <span>Delivery between</span>
+                                <strong>12 Jul - 14 Jul</strong>
+                            </p>
+                        </div>
+                        <button class="closeItem"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="imgArea">
+                        <img src="img/02.webp" alt="">
+                        <label class="customCheckBox" for="roadster">
+                            <input checked type="checkbox" id="roadster">
+                            <div class="indicator">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="textArea">
+                        <h4>Roadster</h4>
+                        <p>Men White Regular Fit Solid Sustainable Casual Shirt</p>
+                        <p class="soldBy">Sold by: Sixth Sense</p>
+                        <div class="butGroup">
+                            <button>Size: 40 <i class="fa-solid fa-caret-down"></i></button>
+                            <button>Qty: 1 <i class="fa-solid fa-caret-down"></i></button>
+                        </div>
+                        <div class="priceArea">
+                            <span class="newPrice"><i class="fa-solid fa-indian-rupee-sign"></i> 899</span>
+                            <span class="oldPrice"><i class="fa-solid fa-indian-rupee-sign"></i> 1,899</span>
+                            <span class="off"><i class="fa-solid fa-indian-rupee-sign"></i> 1,000 Off</span>
+                        </div>
+                        <div class="returnArea">
+                            <p>
+                                <i class="fa-solid fa-rotate-left"></i>
+                                <strong>14 days</strong>
+                                <span>return available</span>
+                            </p>
+                        </div>
+                        <div class="deliveryArea">
+                            <p>
+                                <i class="fa-solid fa-check"></i>
+                                <span>Delivery between</span>
+                                <strong>12 Jul - 14 Jul</strong>
+                            </p>
+                        </div>
+                        <button class="closeItem"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="addWishlistCon">
+                <div class="dFlex jcsb">
+                    <div class="left">
+                        <i class="fa-regular fa-bookmark"></i>
+                        Add More From Wishlist
+                    </div>
+                    <div class="right">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="priceBlock">
+            <div class="couponsCon">
+                <h5>Coupons</h5>
+                <div class="dFlex jcsb aic">
+                    <div class="left dFlex">
+                        <i class="fa-solid fa-tag"></i>
+                        <h4>Apply Coupons</h4>
+                    </div>
+                    <button class="sec">Apply</button>
+                </div>
+            </div>
+            <div class="donationCon">
+                <h5>Support transformative social work in india</h5>
+                <label class="customCheckBox" for="donationCheck">
+                    <input type="checkbox" id="donationCheck">
+                    <h4>Donate and make a difference</h4>
+                    <div class="indicator">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </label>
+                <ul class="donatePrice">
+                    <li><i class="fa-solid fa-indian-rupee-sign"></i> 10</li>
+                    <li><i class="fa-solid fa-indian-rupee-sign"></i> 20</li>
+                    <li><i class="fa-solid fa-indian-rupee-sign"></i> 50</li>
+                    <li><i class="fa-solid fa-indian-rupee-sign"></i> 100</li>
+                </ul>
+                <a href="">Know More</a>
+            </div>
+            <div class="priceCon">
+                <p>Price Details (2 items)</p>
+                <ul>
+                    <li>
+                        <span>Total MRP</span>
+                        <strong><i class="fa-solid fa-indian-rupee-sign"></i> 2,798</strong>
+                    </li>
+                    <li>
+                        <span>Discount on MRP</span>
+                        <strong class="success"><i class="fa-solid fa-indian-rupee-sign"></i> 1.495</strong>
+                    </li>
+                    <li>
+                        <span>Coupon Discount</span>
+                        <a href="">Apply Coupon</a>
+                    </li>
+                    <li>
+                        <span>Shipping Fee</span>
+                        <strong class="success">Free</strong>
+                    </li>
+                    <li class="totalArea">
+                        <span>Total Amount</span>
+                        <strong><i class="fa-solid fa-indian-rupee-sign"></i> 1,323</strong>
+                    </li>
+                </ul>
+                <button class="primary">Place Order</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
