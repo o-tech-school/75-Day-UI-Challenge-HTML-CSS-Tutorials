@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 34</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+        }
+        .checkoutSection{
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 25px 50px;
+        }
+        .dFlex{
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+        .dFlex.aic{
+            align-items: center;
+        }
+        .dFlex.jcsb{
+            justify-content: space-between;
+        }
+        .leftSide{
+            width: 60%;
+        }
+        .rightSide{
+            width: 35%;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        button{
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid #000;
+            background: #fff;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            transition: .2s ease-in-out;
+        }
+        button.cat{
+            padding: 2px 8px;
+            border: 1px solid #03a686;
+            color: #03a686;
+            font-weight: 700;
+        }
+        button.primary{
+            width: 100%;
+            border: 1px solid #ff3f6c;
+            background: #ff3f6c;
+            color: #fff;
+        }
+        button:hover{
+            background: #000;
+            color: #fff;
+        }
+        button.cat:hover{
+            background: #03a686;
+            color: #fff;
+        }
+        button.primary:hover{
+            background: transparent;
+            color: #ff3f6c;
+        }
+        .mb6{
+            margin-bottom: 6px;
+        }
+        .mb8{
+            margin-bottom: 8px;
+        }
+        .mb12{
+            margin-bottom: 12px;
+        }
+        .mr5{
+            margin-right: 5px;
+        }
+        h5{
+            font-weight: 600;
+            color: #000;
+            opacity: .7;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        h6{
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .success{
+            color: #03a686;
+        }
+        .customCheckbox input{
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+        .customCheckbox .indicator{
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            position: relative;
+        }
+        .customCheckbox .indicator::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            background: transparent;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        .customCheckbox input:checked ~ .indicator{
+            border: 1px solid #ff3f6c;
+        }
+        .customCheckbox input:checked ~ .indicator::before{
+            background: #ff3f6c;
+        }
+
+        .defaultAddress, .otherAddress,.addAddress{
+            border: 1px solid #efefef;
+            border-radius: 4px;
+            padding: 12px 14px;
+            margin-bottom: 15px;
+        }
+
+        .addAddress{
+            width: 100%;
+            display: block;
+            text-decoration: none;
+            font-size: 15px;
+            color: #ff3f6c;
+            font-weight: 700;
+        }
+
+        .defaltAddressCon{
+            padding-left: calc(20px + 8px);
+        }
+        .deliveryItems, .priceDetail{
+            padding: 12px 0;
+        }
+        .deliveryItems li{
+            display: block;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #efefef;
+            padding-bottom: 10px;
+        }
+        .deliveryItems li:last-child{
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: 1px solid transparent;
+        }
+        .deliveryItems li img{
+            width: 50px;
+            height: auto;
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+
+        .priceDetail li{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .priceDetail li.total{
+            font-weight: 700;
+            border-top: 1px solid #efefef;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="checkoutSection">
+        <div class="dFlex jcsb">
+            <div class="leftSide">
+                <div class="dFlex aic jcsb mb6">
+                    <h4>Select Delivery Address</h4>
+                    <button>Add New Address</button>
+                </div>
+                <div class="defaultAddress">
+                    <h5 class="mb8">Default Address</h5>
+                    <div class="content">
+                        <div class="dFlex aic mb8">
+                            <label for="oTechSchool" class="customCheckbox mr5">
+                                <input checked type="checkbox" id="oTechSchool">
+                                <div class="indicator"></div>
+                            </label>
+                            <h6 class="mr5">O Tech School</h6>
+                            <button class="cat">Home</button>
+                        </div>
+                        <div class="defaltAddressCon">
+                            <p class="mb6">Bhubaneswara, Odisha, 751010</p>
+                            <p class="mb6">Mobile: <strong>1234 567 890</strong></p>
+                            <ul class="mb6">
+                                <li>Pay on Delivery available</li>
+                            </ul>
+                            <div class="dFlex">
+                                <button class="mr5">Remove</button>
+                                <button>Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mb8">Other Address</h5>
+                <div class="otherAddress">
+                    <div class="content mb12">
+                        <div class="dFlex aic mb8">
+                            <label for="oTechSchool" class="customCheckbox mr5">
+                                <input type="checkbox" id="oTechSchool">
+                                <div class="indicator"></div>
+                            </label>
+                            <h6 class="mr5">O Tech School</h6>
+                            <button class="cat">Office</button>
+                        </div>
+                        <div class="defaltAddressCon">
+                            <p class="mb6">Bhubaneswara, Odisha, 751010</p>
+                            <p class="mb6">Mobile: <strong>1234 567 890</strong></p>
+                            <ul>
+                                <li>Pay on Delivery available</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="dFlex aic mb8">
+                            <label for="oTechSchool" class="customCheckbox mr5">
+                                <input type="checkbox" id="oTechSchool">
+                                <div class="indicator"></div>
+                            </label>
+                            <h6 class="mr5">O Tech School</h6>
+                            <button class="cat">Office</button>
+                        </div>
+                        <div class="defaltAddressCon">
+                            <p class="mb6">Bhubaneswara, Odisha, 751010</p>
+                            <p class="mb6">Mobile: <strong>1234 567 890</strong></p>
+                            <ul>
+                                <li>Pay on Delivery available</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a href="" class="addAddress">
+                    <i class="fa-solid fa-plus mr5"></i> Add New Address
+                </a>
+            </div>
+            <div class="rightSide">
+                <h5>Delivery Estimates</h5>
+                <ul class="deliveryItems">
+                    <li>
+                        <img src="img/01.webp" alt="">
+                        <p>Delivert between <strong>12 Jul - 14 Jul</strong></p>
+                    </li>
+                    <li>
+                        <img src="img/02.webp" alt="">
+                        <p>Delivert between <strong>12 Jul - 14 Jul</strong></p>
+                    </li>
+                </ul>
+
+                <h5>Price details (2 Items)</h5>
+                <ul class="priceDetail">
+                    <li>
+                        <span>Total MRP</span>
+                        <strong><i class="fa-solid fa-indian-rupee-sign"></i> 2,798</strong>
+                    </li>
+                    <li>
+                        <span>Discount On MRP</span>
+                        <strong class="success"><i class="fa-solid fa-indian-rupee-sign"></i> 1,495</strong>
+                    </li>
+                    <li>
+                        <span>Shipping Fee</span>
+                        <strong class="success"></i> Free</strong>
+                    </li>
+                    <li class="total">
+                        <span>Total</span>
+                        <strong><i class="fa-solid fa-indian-rupee-sign"></i> 1,323</strong>
+                    </li>
+                </ul>
+                <button class="primary">Continue</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
