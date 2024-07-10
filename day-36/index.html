@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 36</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .carousel{
+            width: 450px;
+            height: 500px;
+            overflow: hidden;
+        }
+        .imgCarousel{
+            display: flex;
+        }
+        .imgCarousel img{
+            width: 450px;
+            height: 450px;
+            object-fit: cover;
+        }
+        .btnGroup{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        button{
+            padding: 8px 16px;
+            background: #fff;
+            color: #000;
+            border: 1px solid #000;
+            transition: .2s ease-in-out;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+        button:hover{
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="imgCarousel">
+            <div class="item"><img src="img/01.png" alt=""></div>
+            <div class="item"><img src="img/02.png" alt=""></div>
+            <div class="item"><img src="img/03.png" alt=""></div>
+        </div>
+        <div class="btnGroup">
+            <button class="prev">Prev</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.imgCarousel');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        const totalItem = document.querySelectorAll('.item').length;
+        let count = 0;
+        
+        next.addEventListener('click', ()=>{
+            if(count == totalItem -1){ // 2
+                count = 0;
+            }else{
+                count ++;
+            }
+
+            let transform = -(count * 100);
+            carousel.style.transform = `translateX(${transform}%)`;
+        })
+
+        prev.addEventListener('click', ()=>{
+            if(count == 0){ // 2
+                count = totalItem - 1;
+            }else{
+                count --;
+            }
+            
+            let transform = -(count * 100);
+            carousel.style.transform = `translateX(${transform}%)`;
+        })
+
+        
+        
+    </script>
+</body>
+</html>
