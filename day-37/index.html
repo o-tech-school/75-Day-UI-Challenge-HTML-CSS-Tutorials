@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 37</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #efefef;
+        }
+
+        .videoContainer {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, .8);
+            padding: 10px;
+            opacity: 0;
+            transition: .3s ease-in-out;
+        }
+
+        .videoContainer:hover .controls {
+            opacity: 1;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        #progress {
+            cursor: pointer;
+            margin: 0 10px;
+            width: 150px;
+        }
+
+        #volume {
+            width: 100px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="videoContainer">
+        <video id="video">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="controls">
+            <div>
+                <button id="playPause"><i class="fa-solid fa-play"></i></button>
+                <input type="range" id="progress" min="0" max="100">
+            </div>
+            <div>
+                <button id="muteUnmute"><i class="fa-solid fa-volume-high"></i></button>
+                <input type="range" id="volume" min="0" max="100">
+            </div>
+            <button id="fullScreen"><i class="fa-solid fa-expand"></i></button>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        document.addEventListener('DOMContentLoaded', () => {
+            video.muted = true;
+            video.play();
+        })
+    </script>
+</body>
+
+</html>
