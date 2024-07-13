@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 38</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #efefef;
+            font-family: "Poppins", sans-serif;
+        }
+        .songContent{
+            width: 85%;
+            max-width: 400px;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,.3);
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .songContent .bg{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('img/01.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(20px);
+            transform: scale(1.5);
+            z-index: -1;
+        }
+        .songContent .content{
+            margin-top: 100px;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            border-radius: 25px 25px 0 0;
+        }
+        .imgArea{
+            width: 200px;
+            height: 150px;
+            border-radius: 25px;
+            overflow: hidden;
+            transform: translateY(-45px);
+            box-shadow: 0 0 5px rgba(0,0,0,.1);
+        }
+        .imgArea img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .progressArea{
+            width: 100%;
+            /* background: rgba(0, 0, 0, 0.24); */
+            height: 50px;
+            padding: 0 50px;
+        }
+        .progressArea .progress{
+            width: 100%;
+            height: 5px;
+            background: #b6b6b6;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .progressArea .progress .bar{
+            background: rgb(0, 132, 255);
+            height: 5px;
+        }
+        .progressArea .timeInfo{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .progressArea .timeInfo span{
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .05em;
+        }
+        .songInfo{
+            padding: 0px 0 35px;
+        }
+        .songInfo h4{
+            font-size: 31px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .songInfo p{
+            font-size: 18px;
+            opacity: .6;
+        }
+
+        button{
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .controls{
+            padding: 25px 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .fa-backward-step,.fa-forward-step{
+            font-size: 20px;
+        }
+        .fa-play{
+            font-size: 30px;
+        }
+        .light{
+            opacity: .6;
+        }
+
+        .soundArea{
+            padding: 25px 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        .soundArea button{
+            width: 50px;
+        }
+        .soundArea input{
+            width: calc(100% - 100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="songContent">
+        <div class="bg"></div>
+        <div class="content">
+            <div class="imgArea">
+                <img src="img/01.jpg" alt="">
+            </div>
+            <div class="progressArea">
+                <div class="progress">
+                    <div class="bar" style="width: 50%;"></div>
+                </div>
+                <div class="timeInfo">
+                    <span>1.50</span>
+                    <span>3.00</span>
+                </div>
+            </div>
+            <div class="songInfo">
+                <h4>Sajni</h4>
+                <p>Arijit Singh</p>
+            </div>
+            <div class="controls">
+                <button class="light"><i class="fa-solid fa-circle-notch"></i></button>
+                <button><i class="fa-solid fa-backward-step"></i></button>
+                <button><i class="fa-solid fa-play"></i></button>
+                <button><i class="fa-solid fa-forward-step"></i></button>
+                <button class="light"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="soundArea">
+                <button class="light"><i class="fa-solid fa-volume-high"></i></button>
+                <input type="range" min="0" max="100">
+                <button class="light"><i class="fa-solid fa-volume-off"></i></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
