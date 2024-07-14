@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 39</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #fff;
+            font-family: "Poppins", sans-serif;
+        }
+        .dFlex{
+            display: flex;
+            align-items: start;
+            justify-content: start;
+        }
+        .dFlex.aic{
+            align-items: center;
+        }
+        .dFlex.jcsb{
+            justify-content: space-between;
+        }
+        .mr15{
+            margin-right: 15px;
+        }
+        p{
+            font-size: 12px;
+        }
+
+        .calendar{
+            max-width: 350px;
+            width: 80%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 3px #dadada;
+            background: #fff;
+        }
+        .title{
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+        .title button{
+            padding: 4px 8px;
+        }
+        .dates{
+            margin-bottom: 5px;
+        }
+        .dates,.days{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 8px;
+        }
+        .dates span{
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            padding: 5px 0;
+        }
+        button{
+            font-size: 13px;
+            border: 1px solid #efefef;
+            padding: 4px;
+            background: #f8f8f8;
+            border-radius: 4px;
+            color: #000;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        button.today{
+            background: #555;
+            border: 1px solid #555;
+            color: #fff;
+        }
+        button.disable{
+            background: transparent;
+            border: none;
+            opacity: .5;
+            cursor: auto;
+        }
+        button:hover{
+            background: #efefef;
+        }
+        button.today:hover{
+            background: #000;
+            border: 1px solid #000;
+        }
+        button.disable:hover{
+            background: transparent;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calendar">
+        <div class="title dFlex jcsb aic">
+            <div class="leftSide dFlex aic">
+                <button class="mr15"><i class="fa-solid fa-angle-left"></i></button>
+                <div class="month">
+                    <h4>July</h4>
+                    <p>Saturday 13, 2024</p>
+                </div>
+            </div>
+            <div class="rightSide dFlex aic">
+                <h4 class="mr15">11:25 PM</h4>
+                <button><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>
+        <div class="dates">
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+        </div>
+        <div class="days">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>10</button>
+            <button>11</button>
+            <button>12</button>
+            <button class="today">13</button>
+            <button>14</button>
+            <button>15</button>
+            <button>16</button>
+            <button>17</button>
+            <button>18</button>
+            <button>19</button>
+            <button>20</button>
+            <button>21</button>
+            <button>22</button>
+            <button>23</button>
+            <button>24</button>
+            <button>25</button>
+            <button>26</button>
+            <button>27</button>
+            <button>28</button>
+            <button>29</button>
+            <button>30</button>
+            <button>31</button>
+            <button class="disable">1</button>
+            <button class="disable">2</button>
+            <button class="disable">3</button>
+            <button class="disable">4</button>
+        </div>
+    </div>
+</body>
+
+</html>
