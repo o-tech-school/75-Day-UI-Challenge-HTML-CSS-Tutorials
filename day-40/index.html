@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 40</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #fff;
+            font-family: "Poppins", sans-serif;
+            flex-direction: column;
+        }
+
+        .fileUpload, #fileList{
+            width: 85%;
+            max-width: 500px;
+            border: 1px dashed #ccc;
+            padding: 40px;
+            border-radius: 10px;
+            transition: .2s ease-in-out;
+        }
+        .fileUpload{
+            margin-bottom: 25px;
+        }
+        .fileUpload:hover{
+            border-color: #000;
+        }
+        .fileUpload input{
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+        }
+        .fileUpload label{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+        .fileUpload label img{
+            width: 150px;
+            margin-bottom: 15px;
+        }
+        .fileUpload label span{
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        #fileList{
+            border: 1px solid #ccc;
+            display: none;
+        }
+        #fileList.show{
+            display: block;
+        }
+        #fileList li{
+            margin-bottom: 5px;
+        }
+        #fileList span{
+            font-size: 1em;
+            font-weight: 500;
+            letter-spacing: .04em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fileUpload">
+        <input id="fileInput" type="file">
+        <label for="fileInput">
+            <img src="img/file-upload-icon.png" alt="">
+            <span>Choose files</span>
+        </label>
+    </div>
+    <div id="fileList" class="show">
+        <ul>
+            <li><span>Test.jpg</span></li>
+            <li><span>Test2.jpg</span></li>
+        </ul>
+    </div>
+</body>
+
+</html>
