@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f7fa;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+}
+
+.dFlex {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.dFlex.aic {
+  align-items: center;
+}
+.dFlex.jcsb {
+  justify-content: space-between;
+}
+.dFlex.jcc {
+  justify-content: center;
+}
+.dFlex .col2 {
+  width: 50%;
+}
+.dFlex .col3 {
+  width: 25%;
+}
+.dFlex .col4 {
+  width: 33.3333333333%;
+}
+.dFlex .col8 {
+  width: 66.6666666667%;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mr15 {
+  margin-right: 15px;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb25 {
+  margin-bottom: 25px;
+}
+
+.pr10 {
+  padding-right: 10px;
+}
+
+.pr15 {
+  padding-right: 15px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  border-radius: 15px;
+  background: #fff;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+h4 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+button {
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+nav {
+  width: 250px;
+  height: 100vh;
+  background: #fff;
+  padding: 20px;
+  position: relative;
+}
+nav li {
+  display: block;
+  margin-bottom: 5px;
+}
+nav li:last-child {
+  margin-bottom: 0;
+}
+nav .logo {
+  margin-bottom: 25px;
+}
+nav a {
+  display: block;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 15px;
+  transition: 0.2s ease-in-out;
+}
+nav a i {
+  margin-right: 15px;
+}
+nav a.active, nav a:hover {
+  background: #e5e5e5;
+  font-weight: 600;
+}
+nav .bottomNav {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+}
+
+main {
+  width: calc(100vw - 250px);
+  padding: 20px 40px;
+}
+
+#searchForm {
+  position: relative;
+  margin-right: 15px;
+}
+#searchForm .formGroup {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  padding: 0 15px;
+  border-radius: 15px;
+  background: #fff;
+}
+#searchForm label {
+  width: 50px;
+  line-height: 40px;
+}
+#searchForm input {
+  height: 40px;
+  border: none;
+  background: transparent;
+  width: calc(100% - 50px);
+}
+#searchForm input:focus-visible {
+  outline: none;
+}
+
+#navigation {
+  position: relative;
+  line-height: 40px;
+  margin-right: 15px;
+}
+#navigation i {
+  font-size: 16px;
+}
+
+#user img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+#user span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#topReport .content .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#topReport .content .icon i {
+  font-size: 20px;
+}
+#topReport .content .icon.blue {
+  background: #ecf2ff;
+}
+#topReport .content .icon.blue i {
+  color: #0f53ff;
+}
+#topReport .content .icon.green {
+  background: #d8f7ea;
+}
+#topReport .content .icon.green i {
+  color: #2bb277;
+}
+#topReport .content .icon.red {
+  background: #fde7ea;
+}
+#topReport .content .icon.red i {
+  color: #f11e37;
+}
+#topReport .content .icon.lightGreen {
+  background: #e8f6e5;
+}
+#topReport .content .icon.lightGreen i {
+  color: #4bba35;
+}
+
+#weekChart {
+  width: 100%;
+  height: 250px;
+}
+
+.lineBar {
+  padding: 20px 0;
+}
+.lineBar .dFlex {
+  margin-bottom: 10px;
+}
+.lineBar .bar {
+  width: 100%;
+  background: #e5e5e5;
+  height: 5px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.lineBar .bar .line {
+  background: #000;
+  height: 100%;
+}
+.lineBar .bar.orange {
+  background: #ffefdf;
+}
+.lineBar .bar.orange .line {
+  background: #ff6200;
+}
+.lineBar .bar.purple {
+  background: #c9e3ff;
+}
+.lineBar .bar.purple .line {
+  background: #4e13ff;
+}
+.lineBar .bar.red {
+  background: #ffe5ec;
+}
+.lineBar .bar.red .line {
+  background: #fb194b;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+}
+table th {
+  padding: 10px 0;
+}
+table th, table td {
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+table td {
+  text-align: center;
+  padding: 5px;
+}
+table td img {
+  border-radius: 2px;
+}/*# sourceMappingURL=style.css.map */

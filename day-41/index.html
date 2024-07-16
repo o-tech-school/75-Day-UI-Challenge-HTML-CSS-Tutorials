@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 41</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul class="topNav">
+            <li><a class="active" href=""><i class="fa-solid fa-gauge"></i> Overview</a></li>
+            <li><a href=""><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+            <li><a href=""><i class="fa-solid fa-briefcase"></i> Products</a></li>
+            <li><a href=""><i class="fa-solid fa-users"></i> Customers</a></li>
+        </ul>
+        <ul class="bottomNav">
+            <li><a href=""><i class="fa-solid fa-circle-info"></i> Help Center</a></li>
+            <li><a href=""><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="navWrap dFlex aic jcsb mb15">
+            <div class="leftSide">
+                <h2>Dashboard</h2>
+            </div>
+            <div class="rightSide">
+                <div class="dFlex">
+
+                    <from id="searchForm">
+                        <div class="formGroup dFlex">
+                            <label for="searchInput">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </label>
+                            <input id="searchInput" type="text" placeholder="Search..">
+                        </div>
+                    </from>
+
+                    <div id="navigation">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <div id="user" class="dFlex aic">
+                        <img src="img/01.webp" alt="">
+                        <div class="userInfo">
+                            <span>Avinab <i class="fa-solid fa-angle-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="topReport" class="card mb25">
+            <div class="dFlex">
+                <div class="col3">
+                    <div class="content dFlex">
+                        <div class="icon blue mr10">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+                        <div class="text">
+                            <h4>Rs 10.000.00</h4>
+                            <p>Total Revenue</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3">
+                    <div class="content dFlex">
+                        <div class="icon green mr10">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <div class="text">
+                            <h4>365</h4>
+                            <p>Active Campaign</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3">
+                    <div class="content dFlex">
+                        <div class="icon red mr10">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="text">
+                            <h4>2.5m</h4>
+                            <p>Total Store Visites</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3">
+                    <div class="content dFlex">
+                        <div class="icon lightGreen mr10">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <div class="text">
+                            <h4>52,895</h4>
+                            <p>Total Sales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dFlex mb25">
+            <div class="col8 pr15">
+                <div class="card">
+                    <div class="header dFlex aic jcsb">
+                        <div class="left">
+                            <p>Revenue This Week</p>
+                            <h4>Rs 10,000</h4>
+                        </div>
+                        <div class="right">
+                            <button><i class="fa-solid fa-chart-simple"></i></button>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <div id="weekChart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col4">
+                <div class="card">
+                    <div class="header dFlex aic jcsb">
+                        <div class="left">
+                            <h4>Store Visits</h4>
+                            <p>Details about your store visits</p>
+                        </div>
+                        <div class="right">
+                            <button><i class="fa-solid fa-chart-simple"></i></button>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <div class="lineBar">
+                            <div class="dFlex aic jcsb">
+                                <span>Men</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="bar orange">
+                                <div class="line" style="width: 30%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="lineBar">
+                            <div class="dFlex aic jcsb">
+                                <span>Women</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="bar purple">
+                                <div class="line" style="width: 70%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="lineBar">
+                            <div class="dFlex aic jcsb">
+                                <span>Visits / Day</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="bar red">
+                                <div class="line" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="topProduct" class="dFlex">
+            <div class="card">
+                <div class="header dFlex aic jcsb">
+                    <div class="left">
+                        <h4>Top Products</h4>
+                        <p>Best Selling Products In Your Store</p>
+                    </div>
+                    <div class="right">
+                        <button><i class="fa-solid fa-chart-simple"></i></button>
+                    </div>
+                </div>
+                <div class="body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Date added</th>
+                                <th>Price</th>
+                                <th>Total Earning</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="dFlex aic jcc">
+                                        <img class="mr15" width="30px" src="img/01.webp" alt="">
+                                        <h6>Tshirt</h6>
+                                    </div>
+                                </td>
+                                <td>Dec 12, 2023</td>
+                                <td>Rs 1,000</td>
+                                <td>Rs 14,000</td>
+                                <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="dFlex aic jcc">
+                                        <img class="mr15" width="30px" src="img/02.webp" alt="">
+                                        <h6>Tshirt 2</h6>
+                                    </div>
+                                </td>
+                                <td>Jan 28, 2024</td>
+                                <td>Rs 699</td>
+                                <td>Rs 13,350</td>
+                                <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="dFlex aic jcc">
+                                        <img class="mr15" width="30px" src="img/01.webp" alt="">
+                                        <h6>Tshirt 3</h6>
+                                    </div>
+                                </td>
+                                <td>Mar 22, 2024</td>
+                                <td>Rs 259</td>
+                                <td>Rs 11,300</td>
+                                <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script>
+        am5.ready(function () {
+
+            // Create root element
+            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+            var root = am5.Root.new("weekChart");
+
+            // Set themes
+            // https://www.amcharts.com/docs/v5/concepts/themes/
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
+
+            // Create chart
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/
+            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                panX: true,
+                panY: true,
+                wheelX: "panX",
+                wheelY: "zoomX",
+                pinchZoomX: true,
+                paddingLeft: 0,
+                paddingRight: 1
+            }));
+
+            // Add cursor
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+            var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+            cursor.lineY.set("visible", false);
+
+
+            // Create axes
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+            var xRenderer = am5xy.AxisRendererX.new(root, {
+                minGridDistance: 30,
+                minorGridEnabled: true
+            });
+
+            xRenderer.labels.template.setAll({
+                rotation: -90,
+                centerY: am5.p50,
+                centerX: am5.p100,
+                paddingRight: 15
+            });
+
+            xRenderer.grid.template.setAll({
+                location: 1
+            })
+
+            var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+                maxDeviation: 0.3,
+                categoryField: "country",
+                renderer: xRenderer,
+                tooltip: am5.Tooltip.new(root, {})
+            }));
+
+            var yRenderer = am5xy.AxisRendererY.new(root, {
+                strokeOpacity: 0.1
+            })
+
+            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                maxDeviation: 0.3,
+                renderer: yRenderer
+            }));
+
+            // Create series
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+            var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+                name: "Series 1",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "value",
+                sequencedInterpolation: true,
+                categoryXField: "country",
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "{valueY}"
+                })
+            }));
+
+            series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0 });
+            series.columns.template.adapters.add("fill", function (fill, target) {
+                return chart.get("colors").getIndex(series.columns.indexOf(target));
+            });
+
+            series.columns.template.adapters.add("stroke", function (stroke, target) {
+                return chart.get("colors").getIndex(series.columns.indexOf(target));
+            });
+
+
+            // Set data
+            var data = [{
+                country: "Sun",
+                value: 2025
+            }, {
+                country: "Mon",
+                value: 1882
+            }, {
+                country: "Tue",
+                value: 1809
+            }, {
+                country: "Wed",
+                value: 1322
+            }, {
+                country: "Thu",
+                value: 1122
+            }, {
+                country: "Fri",
+                value: 1114
+            }, {
+                country: "Sat",
+                value: 984
+            }];
+
+            xAxis.data.setAll(data);
+            series.data.setAll(data);
+
+
+            // Make stuff animate on load
+            // https://www.amcharts.com/docs/v5/concepts/animations/
+            series.appear(1000);
+            chart.appear(1000, 100);
+
+        }); // end am5.ready()
+    </script>
+</body>
+
+</html>
