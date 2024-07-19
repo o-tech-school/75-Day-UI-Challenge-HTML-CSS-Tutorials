@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.dFlex {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.dFlex.aic {
+  align-items: center;
+}
+.dFlex.jcc {
+  justify-content: center;
+}
+.dFlex.jcsb {
+  justify-content: space-between;
+}
+.dFlex.fdc {
+  flex-direction: column;
+}
+
+.dGrid {
+  display: grid;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb25 {
+  margin-bottom: 25px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb35 {
+  margin-bottom: 35px;
+}
+
+.mb15 {
+  margin-top: 15px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt25 {
+  margin-top: 25px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.mt35 {
+  margin-top: 35px;
+}
+
+.pClr {
+  color: #0057ff;
+}
+
+.btn {
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.btn.primary {
+  background: #0057ff;
+  border-color: #0057ff;
+  color: #fff;
+}
+.btn:hover.primary {
+  letter-spacing: 0.08em;
+}
+.btn:hover.secondary {
+  background: #0057ff;
+  border-color: #0057ff;
+  color: #fff;
+}
+
+nav {
+  background: #080912;
+}
+nav li {
+  display: inline-block;
+  margin-right: 25px;
+}
+nav li:last-child {
+  margin-right: 0;
+}
+nav a {
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 0;
+  display: block;
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+nav a:hover {
+  opacity: 1;
+}
+nav a.active {
+  opacity: 1;
+  font-weight: 700;
+}
+nav a.btn {
+  opacity: 1 !important;
+}
+
+footer {
+  background: #010101;
+  padding-top: 80px;
+}
+footer .logo {
+  margin-bottom: 25px;
+  text-align: center;
+}
+footer ul {
+  margin-bottom: 50px;
+}
+footer li {
+  display: inline-block;
+  margin-right: 25px;
+}
+footer li:last-child {
+  margin-right: 0;
+}
+footer li a {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  border: 1px solid #1e1e1e;
+  display: block;
+  border-radius: 50px;
+  transition: 0.2s ease-in-out;
+  font-weight: 600;
+}
+footer li a:hover {
+  background: #1e1e1e;
+}
+footer .copy {
+  background: #151515;
+  padding: 10px 0;
+}
+footer .copy p {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+#aboutHeader {
+  height: 450px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#aboutHeader::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../img/bg.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(20px);
+}
+#aboutHeader .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#aboutHeader .title h2 {
+  font-size: 45px;
+}
+
+#aboutPageSec {
+  position: relative;
+  padding: 80px 0;
+  text-align: center;
+  background: #fff;
+  color: #000;
+}
+#aboutPageSec .container {
+  max-width: 800px;
+}
+#aboutPageSec h2 {
+  margin-bottom: 25px;
+}
+#aboutPageSec p {
+  font-weight: 600;
+  font-size: 16px;
+}
+#aboutPageSec button {
+  margin: 0 auto;
+}
+
+#quotSec {
+  background: #fff;
+  color: #000;
+  padding: 0 0 80px;
+}
+#quotSec .content {
+  max-width: 800px;
+  background: #efefef;
+  padding: 35px 30px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+#quotSec .content i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 85px;
+  transform: translate(-8%, -28%);
+  opacity: 0.1;
+}
+#quotSec .content h6 {
+  font-size: 21px;
+  text-align: center;
+  line-height: 45px;
+  letter-spacing: 0.05em;
+}
+
+#iDo {
+  background: #f9f9fc;
+  padding: 80px 0;
+  color: #000;
+}
+#iDo h4 {
+  max-width: 500px;
+  text-align: center;
+}
+#iDo li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+#thenkYou {
+  padding: 50px 0;
+  background: #f9f9fc;
+  color: #000;
+  border-top: 2px dashed #d8d8d8;
+}
+#thenkYou p {
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 600;
+  text-align: center;
+  max-width: 500px;
+}/*# sourceMappingURL=style.css.map */
