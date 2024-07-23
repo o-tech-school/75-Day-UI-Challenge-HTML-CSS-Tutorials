@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.dFlex {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.dFlex.aic {
+  align-items: center;
+}
+.dFlex.jcc {
+  justify-content: center;
+}
+.dFlex.jcsb {
+  justify-content: space-between;
+}
+.dFlex.fdc {
+  flex-direction: column;
+}
+
+.dGrid {
+  display: grid;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb25 {
+  margin-bottom: 25px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb35 {
+  margin-bottom: 35px;
+}
+
+.mb15 {
+  margin-top: 15px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt25 {
+  margin-top: 25px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.mt35 {
+  margin-top: 35px;
+}
+
+.mr25 {
+  margin-right: 25px;
+}
+
+.pClr {
+  color: #0057ff;
+}
+
+.textC {
+  text-align: center;
+}
+
+.textR {
+  text-align: right;
+}
+
+.w10 {
+  width: 10%;
+}
+
+.w20 {
+  width: 20%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w60 {
+  width: 60%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.w90 {
+  width: 90%;
+}
+
+.btn {
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.btn.primary {
+  background: #0057ff;
+  border-color: #0057ff;
+  color: #fff;
+}
+.btn.primary.tBg {
+  background: transparent;
+  color: #0057ff;
+  border-color: transparent;
+}
+.btn:hover.primary {
+  letter-spacing: 0.08em;
+}
+.btn:hover.secondary {
+  background: #0057ff;
+  border-color: #0057ff;
+  color: #fff;
+}
+
+nav {
+  background: #080912;
+}
+nav li {
+  display: inline-block;
+  margin-right: 25px;
+}
+nav li:last-child {
+  margin-right: 0;
+}
+nav a {
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 0;
+  display: block;
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+nav a:hover {
+  opacity: 1;
+}
+nav a.active {
+  opacity: 1;
+  font-weight: 700;
+}
+nav a.btn {
+  opacity: 1 !important;
+}
+
+footer {
+  background: #010101;
+  padding-top: 80px;
+}
+footer .logo {
+  margin-bottom: 25px;
+  text-align: center;
+}
+footer ul {
+  margin-bottom: 50px;
+}
+footer li {
+  display: inline-block;
+  margin-right: 25px;
+}
+footer li:last-child {
+  margin-right: 0;
+}
+footer li a {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  border: 1px solid #1e1e1e;
+  display: block;
+  border-radius: 50px;
+  transition: 0.2s ease-in-out;
+  font-weight: 600;
+}
+footer li a:hover {
+  background: #1e1e1e;
+}
+footer .copy {
+  background: #151515;
+  padding: 10px 0;
+}
+footer .copy p {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+#blogDetailHeader {
+  height: 380px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+#blogDetailHeader::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../img/bg.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(20px);
+}
+#blogDetailHeader .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#blogDetailHeader .title h2 {
+  font-size: 45px;
+}
+#blogDetailHeader .title p {
+  opacity: 0.7;
+  font-size: 16px;
+}
+
+#blogDetail {
+  position: relative;
+  padding: 50px 0;
+  background: #f9f9fc;
+  color: #010101;
+}
+#blogDetail h2 {
+  margin-bottom: 20px;
+}
+#blogDetail p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+#blogDetail img {
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+#blogDetail h4 {
+  position: relative;
+  margin-bottom: 15px;
+}
+#blogDetail ul {
+  margin-bottom: 30px;
+}
+#blogDetail ul p {
+  margin-bottom: 5px;
+}
+#blogDetail hr {
+  margin-bottom: 20px;
+}/*# sourceMappingURL=style.css.map */
