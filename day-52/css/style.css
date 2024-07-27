@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease-in-out;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.dFlex {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.dFlex.aic {
+  align-items: center;
+}
+.dFlex.jcc {
+  justify-content: center;
+}
+.dFlex.jcsb {
+  justify-content: space-between;
+}
+.dFlex.fdc {
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.w50 {
+  width: 50%;
+}
+
+#comingSoonSec {
+  position: relative;
+}
+#comingSoonSec::before, #comingSoonSec:after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(85px);
+}
+#comingSoonSec::before {
+  top: 100px;
+  right: 150px;
+  background: #0e47df;
+  opacity: 0.4;
+}
+#comingSoonSec::after {
+  top: 130px;
+  right: 250px;
+  background: #df0ec3;
+  opacity: 0.1;
+}
+#comingSoonSec .dFlex {
+  height: 100vh;
+}
+#comingSoonSec h2, #comingSoonSec h4 {
+  margin-bottom: 20px;
+}
+#comingSoonSec h2 {
+  font-size: 46px;
+  color: #181a39;
+}
+#comingSoonSec p {
+  font-size: 16px;
+  margin-bottom: 35px;
+  max-width: 450px;
+}
+#comingSoonSec ul {
+  list-style: none;
+}
+#comingSoonSec li {
+  display: inline-block;
+  margin-right: 15px;
+}
+#comingSoonSec li i {
+  font-size: 16px;
+  opacity: 0.7;
+  transition: 0.2s ease-in-out;
+}
+#comingSoonSec li a:hover i {
+  opacity: 1;
+}
+#comingSoonSec img {
+  position: relative;
+  z-index: 2;
+}/*# sourceMappingURL=style.css.map */
