@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+}
+
+h1,h2,h3,h4{
+    font-family: "Inter", sans-serif;
+    text-transform: capitalize;
+}
+
+h2{
+    font-size: 28px;
+    line-height: 42px;
+}
+
+h4{
+    font-size: 16px;
+    line-height: 32px;
+}
+
+p{
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: .05em;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+a,a:hover,a:active{
+    text-decoration: none;
+    color: inherit;
+    transition: .3s ease-in-out;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.dFlex{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    &.aic{
+        align-items: center;
+    }
+    &.jcc{
+        justify-content: center;
+    }
+    &.jcsb{
+        justify-content: space-between;
+    }
+    &.fdc{
+        flex-direction: column;
+    }
+}
+
+.container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.w50{
+    width: 50%;
+}
+
+#maintenanceSec{
+    position: relative;
+    background: #f5f7f7;
+    .dFlex{
+        height: 100vh;
+    }
+    .textCon{
+        max-width: 350px;
+    }
+    h2{
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+    h4{
+        font-size: 21px;
+        margin-bottom: 25px;
+    }
+    p{
+        font-size: 16px;
+        opacity: .7;
+    }
+}
