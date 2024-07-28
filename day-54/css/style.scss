@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1,h2,h3,h4{
+    font-family: "Inter", sans-serif;
+    text-transform: capitalize;
+}
+
+h2{
+    font-size: 28px;
+    line-height: 42px;
+}
+
+h4{
+    font-size: 16px;
+    line-height: 32px;
+}
+
+p{
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: .05em;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+a,a:hover,a:active{
+    text-decoration: none;
+    color: inherit;
+    transition: .3s ease-in-out;
+}
+
+button{
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.dFlex{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    &.aic{
+        align-items: center;
+    }
+    &.jcc{
+        justify-content: center;
+    }
+    &.jcsb{
+        justify-content: space-between;
+    }
+    &.fdc{
+        flex-direction: column;
+    }
+}
+
+.btn{
+    display: block;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+
+    &.primary{
+        background: #0057ff;
+        border-color: #0057ff;
+        color: #fff;
+        &.tBg{
+            background: transparent;
+            color: #0057ff;
+            border-color: transparent;
+        }
+    }
+
+    &:hover{
+        &.primary{
+            letter-spacing: .08em;
+        }
+        &.secondary{
+            background: #0057ff;
+            border-color: #0057ff;
+            color: #fff;
+        }
+    }
+}
+
+.container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.w50{
+    width: 50%;
+}
+
+.w100{
+    width: 100%;
+}
+
+.mb15{
+    margin-bottom: 15px;
+}
+
+.mb20{
+    margin-bottom: 20px;
+}
+
+.socialLogin{
+    border: 1px solid #efefef;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 50px;
+    padding: 10px 0;
+    transition: .2s ease-in-out;
+
+    img{
+        width: 30px;
+        margin-right: 10px;
+    }
+    h6{
+        font-size: 15px;
+        font-weight: 500;
+        color: #000;
+    }
+    &:hover{
+        background: #efefef;
+    }
+}
+
+.withEmail{
+    text-align: center;
+    display: block;
+    margin: 15px 0;
+    font-size: 14px;
+    position: relative;
+
+    &::before,&::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 110px;
+        background: #d9d9d9;
+        height: 2px;
+        border-radius: 50px;
+    }
+    &::before{
+        left: 0;
+    }
+    &::after{
+        right: 0;
+    }
+}
+
+.formControl{
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .03em;
+    &:focus-visible{
+        outline: none;
+        border-color: #151515;
+    }
+}
+
+.formGroup{
+    label{
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: block;
+        letter-spacing: .03em;
+    }
+}
+
+#loginSec{
+    width: 85%;
+    max-width: 850px;
+    border-radius: 20px;
+    overflow: hidden;
+    .header{
+        h2{
+            font-size: 28px;
+            color: #151515;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: .7;
+        }
+    }
+    .textArea{
+        padding-right: 45px;
+    }
+    .imgArea{
+        background: url('../img/bg.jpg') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 650px;
+        .content{
+            width: 80%;
+            height: 550px;
+            background: #8071db;
+            border-radius: 8px;
+            position: relative;
+            padding: 15px 25px;
+            img{
+                position: absolute;
+                bottom: 0;
+                width: 250px;
+                right: 0;
+                transform: translate(13px, 1px);
+            }
+            h4{
+                font-size: 29px;
+                color: #fff;
+                line-height: 45px;
+            }
+        }
+    }
+}

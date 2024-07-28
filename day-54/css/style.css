@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease-in-out;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.dFlex {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.dFlex.aic {
+  align-items: center;
+}
+.dFlex.jcc {
+  justify-content: center;
+}
+.dFlex.jcsb {
+  justify-content: space-between;
+}
+.dFlex.fdc {
+  flex-direction: column;
+}
+
+.btn {
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.btn.primary {
+  background: #0057ff;
+  border-color: #0057ff;
+  color: #fff;
+}
+.btn.primary.tBg {
+  background: transparent;
+  color: #0057ff;
+  border-color: transparent;
+}
+.btn:hover.primary {
+  letter-spacing: 0.08em;
+}
+.btn:hover.secondary {
+  background: #0057ff;
+  border-color: #0057ff;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.socialLogin {
+  border: 1px solid #efefef;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 50px;
+  padding: 10px 0;
+  transition: 0.2s ease-in-out;
+}
+.socialLogin img {
+  width: 30px;
+  margin-right: 10px;
+}
+.socialLogin h6 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+}
+.socialLogin:hover {
+  background: #efefef;
+}
+
+.withEmail {
+  text-align: center;
+  display: block;
+  margin: 15px 0;
+  font-size: 14px;
+  position: relative;
+}
+.withEmail::before, .withEmail::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 110px;
+  background: #d9d9d9;
+  height: 2px;
+  border-radius: 50px;
+}
+.withEmail::before {
+  left: 0;
+}
+.withEmail::after {
+  right: 0;
+}
+
+.formControl {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.formControl:focus-visible {
+  outline: none;
+  border-color: #151515;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing: 0.03em;
+}
+
+#loginSec {
+  width: 85%;
+  max-width: 850px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#loginSec .header h2 {
+  font-size: 28px;
+  color: #151515;
+  margin-bottom: 10px;
+}
+#loginSec .header p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  opacity: 0.7;
+}
+#loginSec .textArea {
+  padding-right: 45px;
+}
+#loginSec .imgArea {
+  background: url("../img/bg.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+}
+#loginSec .imgArea .content {
+  width: 80%;
+  height: 550px;
+  background: #8071db;
+  border-radius: 8px;
+  position: relative;
+  padding: 15px 25px;
+}
+#loginSec .imgArea .content img {
+  position: absolute;
+  bottom: 0;
+  width: 250px;
+  right: 0;
+  transform: translate(13px, 1px);
+}
+#loginSec .imgArea .content h4 {
+  font-size: 29px;
+  color: #fff;
+  line-height: 45px;
+}/*# sourceMappingURL=style.css.map */
