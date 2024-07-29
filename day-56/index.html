@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 56</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section id="profileSec">
+        <div class="leftSide">
+            <div class="info dFlex aic mb15">
+                <img src="img/profile.svg" alt="">
+                <div class="text">
+                    <p>Hello,</p>
+                    <h4>Avinab Giri</h4>
+                </div>
+            </div>
+            <div class="navCon">
+                <ul>
+                    <li>
+                        <button><i class="fa-solid fa-gears"></i> Account Settings</button>
+                        <ul>
+                            <li><button>Natification</button></li>
+                            <li><button>Privacy</button></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <button><i class="fa-solid fa-plane-departure"></i> Activity Log</button>
+                        <ul>
+                            <li><button>Recent Logins</button></li>
+                            <li><button>Recent Activities</button></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <button><i class="fa-solid fa-money-bill-wave"></i> Membership Status</button>
+                        <ul>
+                            <li><button>Current Plan</button></li>
+                            <li><button>Renewal Date</button></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <button><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightSide">
+            <div class="content">
+                <div class="dFlex aic mb15">
+                    <h2>Personal Information</h2>
+                    <button><i class="fa-regular fa-pen-to-square"></i></button>
+                </div>
+                <form class="mb25" action="">
+                    <div class="dFlex mb10">
+                        <div class="w50 pr5">
+                            <input disabled type="text" placeholder="Avinab" class="formControl">
+                        </div>
+                        <div class="w50 pl5">
+                            <input disabled type="text" placeholder="Giri" class="formControl">
+                        </div>
+                    </div>
+                    <div class="formGroup">
+                        <label class="mb5" for="">Your Gender</label>
+
+                        <div class="dFlex">
+                            <div class="dFlex aic mr15">
+                                <input disabled class="mr5" type="radio" checked>
+                                <label for="">Male</label>
+                            </div>
+                            <div class="dFlex aic">
+                                <input disabled class="mr5" type="radio">
+                                <label for="">Female</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="dFlex aic mb15">
+                    <h2>Email Address</h2>
+                    <button><i class="fa-regular fa-pen-to-square"></i></button>
+                </div>
+                <form class="mb25" action="">
+                    <div class="dFlex">
+                        <div class="w50 pr5">
+                            <input disabled type="email" placeholder="info@domain.com" class="formControl">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="dFlex aic mb15">
+                    <h2>Mobile Number</h2>
+                    <button><i class="fa-regular fa-pen-to-square"></i></button>
+                </div>
+                <form class="mb30" action="">
+                    <div class="dFlex">
+                        <div class="w50 pr5">
+                            <input disabled type="number" placeholder="+91 1234 567 890" class="formControl">
+                        </div>
+                    </div>
+                </form>
+                <div class="blankSpance"></div>
+                <button class="btn tBg primary mb15">Deactive Account</button>
+                <button class="btn tBg danger">Delete Account</button>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #f1f3f6;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease-in-out;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.dFlex {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.dFlex.aic {
+  align-items: center;
+}
+.dFlex.jcc {
+  justify-content: center;
+}
+.dFlex.jcsb {
+  justify-content: space-between;
+}
+.dFlex.fdc {
+  flex-direction: column;
+}
+
+.btn {
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.btn.primary {
+  background: #0057ff;
+  border-color: #0057ff;
+  color: #fff;
+}
+.btn.primary.tBg {
+  background: transparent;
+  color: #0057ff;
+  border-color: transparent;
+}
+.btn.danger {
+  background: #bb0606;
+  border-color: #bb0606;
+  color: #fff;
+}
+.btn.danger.tBg {
+  background: transparent;
+  color: #bb0606;
+  border-color: transparent;
+}
+.btn:hover.primary {
+  letter-spacing: 0.08em;
+}
+.btn:hover.secondary {
+  background: #0057ff;
+  border-color: #0057ff;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.mr15 {
+  margin-right: 15px;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb25 {
+  margin-bottom: 25px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.pr5 {
+  padding-right: 5px;
+}
+
+.pl5 {
+  padding-left: 5px;
+}
+
+.formControl {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.formControl:focus-visible {
+  outline: none;
+  border-color: #151515;
+}
+
+.formGroup label {
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+#profileSec {
+  width: 90%;
+  max-width: 1080px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 35px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+#profileSec .info, #profileSec .navCon, #profileSec .content {
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+#profileSec .leftSide {
+  width: 25%;
+}
+#profileSec .leftSide .info {
+  padding: 10px 20px;
+}
+#profileSec .leftSide .info img {
+  width: 50px;
+  height: 50px;
+}
+#profileSec .leftSide .info .text {
+  padding-left: 20px;
+}
+#profileSec .leftSide .info p {
+  line-height: 1;
+}
+#profileSec .leftSide ul {
+  list-style: none;
+}
+#profileSec .leftSide ul li:first-child button {
+  border-bottom: 1px solid #f0f0f0;
+}
+#profileSec .leftSide ul button {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  background: #fff;
+  text-align: left;
+  padding: 20px 20px;
+  border-top: 1px solid #f0f0f0;
+  color: #151515;
+}
+#profileSec .leftSide ul button i {
+  color: #0057ff;
+  padding-right: 20px;
+}
+#profileSec .leftSide ul button:hover {
+  background: rgba(0, 85, 255, 0.1450980392);
+  color: #0057ff;
+}
+#profileSec .leftSide ul ul li button {
+  border-top: none;
+  padding: 20px 20px 20px 60px;
+}
+#profileSec .leftSide ul ul li:first-child button {
+  border-bottom: none;
+}
+#profileSec .rightSide {
+  width: 75%;
+  padding-left: 35px;
+}
+#profileSec .rightSide .content {
+  padding: 20px 25px;
+}
+#profileSec .rightSide .content h2 {
+  font-weight: 600;
+  margin-right: 25px;
+}
+#profileSec .rightSide .content i {
+  font-size: 22px;
+  color: #0057ff;
+}
+#profileSec .rightSide .content button {
+  background: transparent;
+  border: none;
+}
+
+.blankSpance {
+  height: 120px;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
