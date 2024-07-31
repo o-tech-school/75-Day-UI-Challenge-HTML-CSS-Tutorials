@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 57</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section id="todoSec">
+        <div class="container">
+            <h1 class="mb15">To-Do List</h1>
+            <form id="taskForm" class="dFlex aic jcsb" action="">
+                <input id="taskInput" type="text" class="formControl" placeholder="Enter Task">
+                <button class="btn primary">Submit</button>
+            </form>
+
+            <div class="taskColumns dFlex jcsb">
+                <div class="taskColumn w50 pr5">
+                    <div class="title workTitle">
+                        <h2>In Work</h2>
+                    </div>
+                    <ul id="workList">
+                        
+                    </ul>
+                </div>
+                <div class="taskColumn w50 pl5">
+                    <div class="title doneTitle">
+                        <h2>Done</h2>
+                    </div>
+                    <ul id="doneList"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const taskForm = document.getElementById('taskForm');
+        const taskInput = document.getElementById('taskInput');
+        const workList = document.getElementById('workList');
+        const doneList = document.getElementById('doneList');
+
+        taskForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            let inputVal = taskInput.value;
+            addTaskFun(inputVal);
+            taskInput.value='';
+        })
+
+        function taskHtmlGen(task,type){
+            let icon = (type == 'done') ? 'fa-check' : 'fa-xmark';
+            let html = `
+                <li>
+                    <div class="info dFlex aic jcsb">
+                        <p>Avinab</p>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="dFlex aic jcsb">
+                        <h4>${task}</h4>
+                        <button onclick="handleTaskBtn(this)" class="taskBtn ${type}"><i class="fa-solid ${icon}"></i></button>
+                    </div>
+                </li>
+            `;
+
+            return html;
+        }
+
+        function addTaskFun(task){
+            let taskHtml = taskHtmlGen(task,'done');
+
+            workList.innerHTML += taskHtml;
+        }
+
+        function moveToDoneTaskFun(task){
+            let taskHtml = taskHtmlGen(task,'remove');
+
+            doneList.innerHTML += taskHtml;
+        }
+
+        function handleTaskBtn(button){
+            let taskEle = button.closest('li');
+            let task = taskEle.querySelector('h4').innerHTML;
+
+            if(button.classList.contains('done')){
+                moveToDoneTaskFun(task);
+            }else if(button.classList.contains('remove')){
+                
+            }
+
+            taskEle.remove();
+        }
+    </script>
+</body>
+</html>
