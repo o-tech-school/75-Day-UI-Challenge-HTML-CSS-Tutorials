@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 58</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section id="waetherSec">
+        <div class="head">
+            <select id="citySelect">
+                <option value="bhubaneswar">Bhubaneswar</option>
+                <option value="Cuttack">Cuttack</option>
+                <option value="Rourkela">Rourkela</option>
+                <option value="Sambalpur">Sambalpur</option>
+                <option value="Puri">Puri</option>
+                <option value="Berhampur">Berhampur</option>
+                <option value="Balasore">Balasore</option>
+                <option value="Baripada">Baripada</option>
+                <option value="Bhadrak">Bhadrak</option>
+            </select>
+            <div id="desc"></div>
+        </div>
+        <div id="temp"></div>
+        <div id="icon"></div>
+        <div class="footer">
+            <ul>
+                <li><i class="fa-solid fa-wind"></i> <p id="wind"></p> <p>Wind</p></li>
+                <li><i class="fa-solid fa-droplet"></i> <p id="humidity"></p> <p>Humidity</p></li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('citySelect').addEventListener('change', ()=>{
+            const city = document.getElementById('citySelect').value;
+            featchWeather(city);
+        })
+
+        async function featchWeather(city){
+            const apiKey = 'd48b91bcf1b8a938eb8d536acd49786e';
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},IN&appid=${apiKey}&units=metric`;
+
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log(data);
+            document.getElementById('desc').innerHTML = data.weather[0].description;
+            document.getElementById('temp').innerHTML = data.main.temp;
+            document.getElementById('wind').innerHTML = data.wind.speed + ' m/s';
+            document.getElementById('humidity').innerHTML = data.main.humidity + ' %';
+
+            const icon = document.getElementById('icon');
+            icon.innerHTML = '';
+            let iconCode = data.weather[0].icon;
+            const iconImg = document.createElement('img');
+            iconImg.src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+            icon.appendChild(iconImg);
+            
+        }
+
+
+        window.onload = async function(){
+            featchWeather('Bhubaneswar')
+        }
+    </script>
+</body>
+</html>

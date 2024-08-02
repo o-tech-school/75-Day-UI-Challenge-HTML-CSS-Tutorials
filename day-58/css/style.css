@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #f7f8fa;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease-in-out;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#waetherSec {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+  border-radius: 50px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+#waetherSec #citySelect {
+  font-size: 24px;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+}
+#waetherSec #citySelect option {
+  background: #000;
+}
+#waetherSec #citySelect:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+#waetherSec #desc {
+  font-size: 24px;
+  font-weight: 500;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+#waetherSec #temp {
+  font-size: 10em;
+  font-weight: 500;
+  line-height: 1em;
+  position: relative;
+}
+#waetherSec #temp:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  transform: translate(100%, 50%);
+}
+#waetherSec #icon {
+  position: relative;
+  transform: translateY(-3%);
+}
+#waetherSec #icon img {
+  transform: scale(3);
+}
+#waetherSec .footer {
+  width: 100%;
+  margin-top: 25px;
+}
+#waetherSec .footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+}
+#waetherSec .footer i {
+  font-size: 18px;
+}
+#waetherSec .footer p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+#waetherSec .footer p:last-child {
+  opacity: 0.7;
+}/*# sourceMappingURL=style.css.map */

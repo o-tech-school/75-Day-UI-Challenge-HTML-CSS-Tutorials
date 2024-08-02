@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    background: #f7f8fa;
+    color: #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1,h2,h3,h4{
+    font-family: "Inter", sans-serif;
+    text-transform: capitalize;
+}
+
+h2{
+    font-size: 28px;
+    line-height: 42px;
+}
+
+h4{
+    font-size: 16px;
+    line-height: 32px;
+}
+
+p{
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: .05em;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+a,a:hover,a:active{
+    text-decoration: none;
+    color: inherit;
+    transition: .3s ease-in-out;
+}
+
+button{
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+#waetherSec{
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+    border-radius: 50px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    #citySelect{
+        font-size: 24px;
+        padding: 8px 16px;
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        option{
+            background: #000;
+        }
+        &:focus-visible{
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    #desc{
+        font-size: 24px;
+        font-weight: 500;
+        opacity: .7;
+        letter-spacing: .05em;
+    }
+    #temp{
+        font-size: 10em;
+        font-weight: 500;
+        line-height: 1em;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 18px;
+            height: 18px;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            transform: translate(100%,50%);
+        }
+    }
+    #icon{
+        position: relative;
+        transform: translateY(-3%);
+        img{
+            transform: scale(3);
+        }
+    }
+    .footer{
+        width: 100%;
+        margin-top: 25px;
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+        i{
+            font-size: 18px;
+        }
+        p{
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            &:last-child{
+                opacity: .7;
+            }
+        }
+    }
+}
