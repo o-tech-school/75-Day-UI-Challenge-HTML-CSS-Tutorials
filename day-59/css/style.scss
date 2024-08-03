@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    background: #f4f4f9;
+    color: #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1,h2,h3,h4{
+    font-family: "Inter", sans-serif;
+    text-transform: capitalize;
+}
+
+h2{
+    font-size: 28px;
+    line-height: 42px;
+}
+
+h4{
+    font-size: 16px;
+    line-height: 32px;
+}
+
+p{
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: .05em;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+a,a:hover,a:active{
+    text-decoration: none;
+    color: inherit;
+    transition: .3s ease-in-out;
+}
+
+button{
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+.dFlex{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    &.aic{
+        align-items: center;
+    }
+    &.jcc{
+        justify-content: center;
+    }
+    &.jcsb{
+        justify-content: space-between;
+    }
+    &.jcse{
+        justify-content: space-evenly;
+    }
+    &.fdc{
+        flex-direction: column;
+    }
+}
+
+#recipeCard{
+    position: relative;
+    background: #fff;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 12px;
+    overflow: hidden;
+    .header{
+        height: 200px;
+        overflow: hidden;
+        img{
+            height: 100%;
+            object-fit: cover;
+            transition: .2s ease-in-out;
+        }
+    }
+    .body{
+        padding: 20px;
+        .author{
+            color: #95a9a6;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .info{
+            font-size: 14px;
+            color: #7f8c8b;
+            margin-bottom: 10px;
+        }
+        h3{
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #2980b9;
+        }
+        ul li{
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            &::before{
+                content: '';
+                position: absolute;
+                left: 5px;
+                top: 50%;
+                width: 8px;
+                height: 8px;
+                background: #2980b9;
+                border-radius: 50%;
+                transform: translateY(-40%);
+            }
+        }
+        .itemCon{
+            height: 400px;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    }
+    &:hover{
+        .header img{
+            transform: scale(1.05);
+        }
+    }
+}
