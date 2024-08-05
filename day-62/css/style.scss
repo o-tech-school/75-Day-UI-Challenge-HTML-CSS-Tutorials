@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f9;
+}
+
+.loadingCon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    gap: 20px;
+}
+
+.spinner{
+    width: 40px;
+    height: 40px;
+    border: 5px solid black;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+.pluse{
+    width: 40px;
+    height: 40px;
+    background: #e74c3c;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(1.5);
+        opacity: .5;
+    }
+}
+
+.dots{
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    span{
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: #000;
+        border-radius: 50%;
+        animation: bounce 1.5s infinite;
+        &:nth-child(1){
+            animation-delay: 0s;
+        }
+        &:nth-child(2){
+            animation-delay: 0.3s;
+        }
+        &:nth-child(3){
+            animation-delay: 0.6s;
+        }
+    }
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+}
