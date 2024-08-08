@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cardContent {
+    position: relative;
+    padding: 50px 0;
+
+    max-width: 1280px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    
+    @media (max-width: 996px){
+        grid-template-columns: repeat(2, 1fr);
+        padding: 50px 80px;
+    }
+
+    @media (max-width: 556px){
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #efefef;
+    border-radius: 15px;
+
+    .imgArea {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #151515;
+        transition: .5s ease-in-out;
+        overflow: hidden;
+
+        span,
+        i {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: .5s ease-in-out;
+        }
+
+        span {
+            font-size: 50px;
+            color: #3f3f3f;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: .05em;
+            
+        }
+
+        i {
+            font-size: 60px;
+            color: #66c4e9;
+        }
+    }
+
+    .contentArea {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 0 15px 0 50px;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s ease-in-out;
+
+        h2 {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            opacity: .8;
+        }
+
+        .btn {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            color: #0c44df;
+            letter-spacing: .04em;
+        }
+    }
+
+    &:hover {
+        .imgArea {
+            width: 150px;
+            height: 150px;
+            left: -75px;
+            top: calc(50% - 75px);
+            background: #0c44df;
+
+            span{
+                opacity: 0;
+            }
+            i{
+                color: #fff;
+            }
+        }
+        .contentArea{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
