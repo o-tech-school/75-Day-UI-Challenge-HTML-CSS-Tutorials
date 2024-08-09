@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 65</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Welcome to our Website</h1>
+    <p>Scroll down to see the magic!</p>
+</header>
+
+<section id="section1" class="contentSec">
+    <div class="content">
+        <h2>Section 1</h2>
+        <p>This is the first section. The content appears smoothly as you scroll.</p>
+    </div>
+</section>
+
+<section id="section2" class="contentSec">
+    <div class="content">
+        <h2>Section 2</h2>
+        <p>This is the second section. Scroll animations make the experience engaging.</p>
+    </div>
+</section>
+
+<section id="section3" class="contentSec">
+    <div class="content">
+        <h2>Section 3</h2>
+        <p>This is the third section. Watch as elements come into view with style.</p>
+    </div>
+</section>
+
+<footer>
+    <p>Thank you for visiting. We hope you enjoyed the animations!</p>
+</footer>
+
+
+<script>
+    function scrollApper(){
+        var elements = document.querySelectorAll('.contentSec, header h1, header p');
+
+        elements.forEach(function(e){
+            let posn = e.getBoundingClientRect().top;
+            let scrPosn = window.innerHeight / 1.3;
+            
+            if(posn < scrPosn){
+                e.classList.add('show');
+            }
+            
+        })
+    }
+
+    window.addEventListener('scroll', scrollApper);
+
+    scrollApper();
+</script>
+
+
+</body>
+</html>
