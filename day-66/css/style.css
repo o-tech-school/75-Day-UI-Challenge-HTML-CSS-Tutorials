@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f9;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cardContent {
+  position: relative;
+  perspective: 1000px;
+}
+.cardContent:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.card .cardFront, .card .cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+.card .cardFront::before, .card .cardBack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+.card .cardFront h2, .card .cardBack h2 {
+  margin-bottom: 25px;
+}
+.card .cardFront {
+  background: url("../img/sad.jpg") no-repeat center center;
+  background-size: cover;
+}
+.card .cardFront::before {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+.card .cardBack {
+  background: url("../img/happy.jpg") no-repeat center center;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+.card .cardBack::before {
+  background: linear-gradient(45deg, #fc4a1a, #f7b733);
+}/*# sourceMappingURL=style.css.map */
