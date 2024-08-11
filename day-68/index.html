@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 68</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="timeContent">
+        <h1>Countdown to new year</h1>
+        <div id="countdown">
+            <div class="timeBox">
+                <span class="time" id="day">00</span>
+                <span class="label">Days</span>
+            </div>
+
+            <div class="timeBox">
+                <span class="time" id="hours">00</span>
+                <span class="label">Hours</span>
+            </div>
+
+            <div class="timeBox">
+                <span class="time" id="minutes">00</span>
+                <span class="label">Minutes</span>
+            </div>
+
+            <div class="timeBox">
+                <span class="time" id="seconds">00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const targetDate = new Date('Jan 1, 2025 00:00:00').getTime();
+        const countdownInterval = setInterval(()=>{
+            const now = new Date().getTime();
+            const timeDiff = targetDate - now;
+            
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(timeDiff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            const minutes = Math.floor(timeDiff % (1000 * 60 * 60) / (1000 * 60));
+            const seconds = Math.floor(timeDiff % (1000 * 60 ) / 1000);
+            
+            document.getElementById('day').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+
+            if(timeDiff < 0){
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').innerHTML = "Expired";
+            }
+            
+            
+        }, 1000)
+    </script>
+</body>
+</html>
