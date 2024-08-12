@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 69</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="gallery">
+
+        <div class="galleryItem">
+            <img src="img/01.avif" alt="Image 1">
+        </div>
+
+        <div class="galleryItem">
+            <img src="img/02.avif" alt="Image 2">
+        </div>
+
+        <div class="galleryItem">
+            <img src="img/03.avif" alt="Image 3">
+        </div>
+
+        <div class="galleryItem">
+            <img src="img/04.avif" alt="Image 4">
+        </div>
+
+        <div class="galleryItem">
+            <img src="img/05.avif" alt="Image 5">
+        </div>
+
+        <div class="galleryItem">
+            <img src="img/06.avif" alt="Image 6">
+        </div>
+
+    </div>
+    
+    <div id="lightBox">
+        <span id="close">&times;</span>
+        <img src="img/06.avif" alt="" id="lightBoxCon">
+        <div id="caption">Image</div>
+    </div>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.galleryItem img');
+        const lightBox = document.getElementById('lightBox');
+        const lightBoxImg = document.getElementById('lightBoxCon');
+        const caption = document.getElementById('caption');
+        const close = document.getElementById('close');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', ()=>{
+                
+                lightBox.style.display = 'flex';
+                lightBoxImg.src = item.src;
+                caption.innerText = item.alt;
+                
+                
+            })
+
+            close.addEventListener('click', (e)=>{
+                lightBox.style.display = 'none';
+            })
+
+            lightBox.addEventListener('click', (e)=>{
+                if(e.target !== lightBoxImg && e.target !== caption){
+                    lightBox.style.display = 'none';
+                }
+            })
+        })
+    </script>
+</body>
+</html>
