@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.playerCon {
+  width: 300px;
+  background: #2c2c2c;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.playerCon .cover img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.playerCon .musicInfo {
+  margin-bottom: 15px;
+}
+.playerCon .musicInfo h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.playerCon .musicInfo h3 {
+  font-size: 16px;
+  color: #aaa;
+}
+.playerCon .controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.playerCon .controls button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+}
+.playerCon .controls button:hover {
+  transform: scale(1.2);
+}
+.playerCon .progressCon {
+  background: #444;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.playerCon .progressCon #progess {
+  background: #1db954;
+  height: 5px;
+  width: 0;
+}
+.playerCon .volumeCon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playerCon .volumeCon input {
+  margin: 0 10px;
+  cursor: pointer;
+  width: 100px;
+}
+.playerCon .volumeCon i {
+  font-size: 18px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 72</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="playerCon">
+        <div class="cover" >
+            <img id="cover" src="img/1.avif" alt="">
+        </div>
+        <div class="musicInfo">
+            <h2 id="title">Song Title</h2>
+            <h3 id="artist">Artist Name</h3>
+        </div>
+        <div class="controls">
+            <button id="prev"><i class="fa-solid fa-backward-step"></i></button>
+            <button id="play"><i class="fa-solid fa-play"></i></button>
+            <button id="next"><i class="fa-solid fa-forward-step"></i></button>
+        </div>
+        <div class="progressCon">
+            <div id="progess"></div>
+        </div>
+        <div class="volumeCon">
+            <i class="fa-solid fa-volume-off"></i>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+            <i class="fa-solid fa-volume-high"></i>
+        </div>
+    </div>
+    
+    <audio id="audio" src="audio/song1.mp3"></audio>
+
+    <script>
+        const audio = document.getElementById('audio');
+        const play = document.getElementById('play');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        const progess = document.getElementById('progess');
+        const title = document.getElementById('title');
+        const artist = document.getElementById('artist');
+        const cover = document.getElementById('cover');
+        const volume = document.getElementById('volume');
+        const progressCon = document.querySelector('.progressCon');
+
+        const songs = [
+            {
+                name: 'song1',
+                title: 'Song Title 1',
+                artist: 'Artist 1',
+                cover: '1.avif',
+            },
+            {
+                name: 'song2',
+                title: 'Song Title 2',
+                artist: 'Artist 2',
+                cover: '2.avif',
+            },
+            {
+                name: 'song3',
+                title: 'Song Title 3',
+                artist: 'Artist 3',
+                cover: '3.avif',
+            },
+        ];
+
+        let songIndex = 0;
+
+        function loadSong(song){
+            title.innerText = song.title;
+            artist.innerText = song.artist;
+            audio.src = `audio/${song.name}.mp3`
+            cover.src = `img/${song.cover}`
+        }
+
+        loadSong(songs[songIndex])
+
+        function playSong(){
+            play.querySelector('i').classList.remove('fa-play');
+            play.querySelector('i').classList.add('fa-pause');
+            audio.play()
+        }
+
+        function pauseSong(){
+            play.querySelector('i').classList.remove('fa-pause');
+            play.querySelector('i').classList.add('fa-play');
+            audio.pause()
+        }
+        
+        play.addEventListener('click', ()=>{
+            const isPlaying = play.querySelector('i').classList.contains('fa-pause');
+            
+            if(isPlaying){
+                pauseSong();
+            }else{
+                playSong();
+            }
+
+        })
+
+        prev.addEventListener('click', ()=>{
+            songIndex = (songIndex - 1 + songs.length) % songs.length;
+            loadSong(songs[songIndex]);
+            playSong();
+        })
+
+        next.addEventListener('click', ()=>{
+            songIndex = (songIndex + 1 + songs.length) % songs.length;
+            loadSong(songs[songIndex]);
+            playSong();
+        })
+
+        
+        audio.addEventListener('timeupdate', (e)=>{
+            const {duration , currentTime} = e.srcElement;
+            const prodressPer = (currentTime / duration) * 100;
+
+            progess.style.width = `${prodressPer}%`;
+            
+        })
+
+        progressCon.addEventListener('click', (e)=>{
+            const width = progressCon.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+
+            audio.currentTime = (clickX / width) * duration;
+        })
+
+        volume.addEventListener('input', (e)=>{
+            console.log(e.target.value);
+            
+            audio.volume = e.target.value;
+        })
+
+
+
+    </script>
+</body>
+</html>
