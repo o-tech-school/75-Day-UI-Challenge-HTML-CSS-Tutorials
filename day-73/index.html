@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 73</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div id="tabNav">
+            <ul>
+                <li><button class="active" data-target="home"><i class="fa-solid fa-house"></i></button></li>
+                <li><button data-target="about"><i class="fa-solid fa-user"></i></button></li>
+                <li><button data-target="profile"><i class="fa-solid fa-suitcase"></i></button></li>
+                <li><button data-target="contact"><i class="fa-solid fa-comment"></i></button></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+
+        <section id="home" class="show">
+            <div class="container">
+                <div class="dFlex aic jcsb">
+                    <div class="leftSide">
+                        <h1><span>I'M Avinab Giri</span> Web Developer</h1>
+                        <p>A passionate full-stack developer with expertise in HTML, CSS, JavaScript, PHP, and Laravel. I specialize in creating dynamic and beautiful web applications.</p>
+                        <button>More About Me</button>
+                    </div>
+                    <div class="rightSide">
+                        <img src="img/profile.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="title">
+                    <h2>About Me</h2>
+                </div>
+                <div class="dFlex aic jcsb">
+                    <div class="infoArea">
+                        <h4>Personal Infos</h4>
+                        <ul>
+                            <li><span>First Name:</span> Avinab</li>
+                            <li><span>Last Name:</span> Giri</li>
+                            <li><span>Age:</span> 26 Years</li>
+                            <li><span>Nationality:</span> India</li>
+                            <li><span>Freelancer:</span> Available Soon</li>
+                            <li><span>Address:</span> Bhubaneswar</li>
+                        </ul>
+                        <button>Download CV <i class="fa-solid fa-download"></i></button>
+                    </div>
+                    <div class="starArea">
+                        <div class="item">
+                            <strong>3 +</strong>
+                            <p>Years Of Experience</p>
+                        </div>
+                        <div class="item">
+                            <strong>10 +</strong>
+                            <p>Complete Project</p>
+                        </div>
+                        <div class="item">
+                            <strong>65 +</strong>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="item">
+                            <strong>23 +</strong>
+                            <p>Award Won</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile">
+            <div class="container">
+                <div class="title">
+                    <h2>My Profile</h2>
+                </div>
+                <div class="gallery">
+                    <img src="img/1.avif" alt="">
+                    <img src="img/2.avif" alt="">
+                    <img src="img/3.avif" alt="">
+                    <img src="img/1.avif" alt="">
+                    <img src="img/2.avif" alt="">
+                    <img src="img/3.avif" alt="">
+                    <img src="img/1.avif" alt="">
+                    <img src="img/2.avif" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="title">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="dFlex aic jcsb">
+                    <div class="textArea">
+                        <h4>Dont Be Shy</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt incidunt repellat laudantium quidem omnis perferendis exercitationem molestias sapiente rem ut atque consequuntur, esse totam reprehenderit!</p>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-arrow"></i>
+                                <div>
+                                    <span>Address</span>
+                                    <p>Bhubaneswar, Odisha, 751010</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-envelope-open"></i>
+                                <div>
+                                    <span>Mail Id</span>
+                                    <p>info@domain.com</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <span>Call Me</span>
+                                    <p>+91 1234 567 890</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="formArea">
+                        <form action="">
+                            <input type="text" class="formControl" placeholder="Your Name">
+                            <input type="text" class="formControl" placeholder="Your E-Mail">
+                            <input type="text" class="formControl" placeholder="Your Subject">
+                            <textarea name="" id="" placeholder="Comments"></textarea>
+                            <button>Send Me <i class="fa-regular fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script>
+        const navBtn = document.querySelectorAll('#tabNav button');
+        const targets = document.querySelectorAll('section');
+
+        navBtn.forEach((nav)=>{
+            nav.addEventListener('click', (e)=>{
+                let targetId = e.currentTarget.dataset.target;
+
+                navBtn.forEach((item)=>{
+                    item.classList.remove('active');
+                })
+
+                e.currentTarget.classList.add('active');
+
+                targets.forEach((target)=>{
+                    target.classList.remove('show');
+                })
+                
+                document.getElementById(targetId).classList.add('show');
+                                
+            })
+        })
+    </script>
+</body>
+</html>

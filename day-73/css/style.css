@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  background: #151515;
+  color: #fff;
+}
+
+nav {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.0941176471);
+  border-radius: 50px;
+  padding: 5px;
+}
+nav li {
+  display: inline-block;
+  margin-right: 15px;
+}
+nav li:last-child {
+  margin-right: 0;
+}
+nav button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+nav button:hover, nav button.active {
+  background: #f8b90c;
+  color: #fff;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.dFlex {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.dFlex.aic {
+  align-items: center;
+}
+.dFlex.jcc {
+  justify-content: center;
+}
+.dFlex.jcsb {
+  justify-content: space-between;
+}
+
+p {
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid #f8b90c;
+  background: transparent;
+  color: #fff;
+  background: rgba(248, 185, 12, 0.0745098039);
+  transition: 0.3s ease-in-out;
+}
+button:hover {
+  background: #f8b90c;
+}
+
+#home .dFlex {
+  height: 100vh;
+}
+#home .leftSide, #home .rightSide {
+  width: 50%;
+}
+#home .leftSide {
+  padding-right: 50px;
+}
+#home h1 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#home h1 span {
+  color: #f8b90c;
+}
+#home p {
+  margin-bottom: 20px;
+}
+#home img {
+  width: 85%;
+  height: auto;
+  max-width: 450px;
+  border-radius: 4px;
+  height: 450px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+.title h2 {
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+#about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#about .infoArea h4 {
+  margin-bottom: 20px;
+}
+#about .infoArea ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  margin-bottom: 25px;
+}
+#about .infoArea ul li {
+  display: block;
+  letter-spacing: 0.05em;
+  font-size: 18px;
+}
+#about .infoArea ul li span {
+  opacity: 0.6;
+}
+#about .starArea {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+#about .starArea .item {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #1f1f1f;
+  padding: 10px;
+  border-radius: 5px;
+}
+#about .starArea .item strong {
+  font-size: 35px;
+  font-weight: 600;
+  color: #f8b90c;
+}
+
+#profile .gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+#profile .gallery img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3px;
+}
+
+#contact {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contact .textArea {
+  width: 60%;
+  padding-right: 50px;
+}
+#contact .textArea h4 {
+  margin-bottom: 20px;
+}
+#contact .textArea p {
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+#contact .textArea li {
+  display: flex;
+  align-items: center;
+}
+#contact .textArea li i {
+  width: 50px;
+  color: #f8b90c;
+  font-size: 21px;
+}
+#contact .textArea li span {
+  opacity: 0.5;
+}
+#contact .textArea li p {
+  opacity: 1;
+}
+#contact .formArea {
+  width: 40%;
+}
+#contact .formArea .formControl, #contact .formArea textarea {
+  width: 100%;
+  border: 1px solid #1f1f1f;
+  background: transparent;
+  border-radius: 3px;
+  background: #1f1f1f;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+#contact .formArea .formControl {
+  height: 40px;
+}
+#contact .formArea textarea {
+  height: 80px;
+}
+
+section {
+  display: none !important;
+}
+section.show {
+  display: flex !important;
+}/*# sourceMappingURL=style.css.map */
