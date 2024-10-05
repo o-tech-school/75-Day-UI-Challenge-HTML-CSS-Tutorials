@@ -17,7 +17,8 @@
                     <h1>Logo</h1>
                 </div>
                 <div class="mainNav">
-                    <ul>
+                    <button id="toggleBtn" class="toggleBtn"><span></span><span></span><span></span></button>
+                    <ul id="mainNavBar">
                         <li><a class="active" href="">Home</a></li>
                         <li><a href="">Shop</a></li>
                         <li><a href="">About</a></li>
@@ -316,5 +317,14 @@
         </div>
     </footer>
 </body>
+
+<script>
+    const toggle = document.getElementById('toggleBtn');
+    const navBar = document.getElementById('mainNavBar');
+
+    toggle.addEventListener('click', ()=>{
+        navBar.classList.toggle('show');
+    })
+</script>
 
 </html>
